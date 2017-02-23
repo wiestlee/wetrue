@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-02-10T04:50:50.358Z</updated>
+  <updated>2017-02-02T14:41:22.148Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -14,32 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://wiestlee.github.io/2017/02/10/Hello/"/>
-    <id>https://wiestlee.github.io/2017/02/10/Hello/</id>
-    <published>2017-02-10T04:50:50.234Z</published>
-    <updated>2017-02-10T04:50:50.358Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="title-Hello"><a href="#title-Hello" class="headerlink" title="title: Hello"></a>title: Hello</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<h2 id="好"><a href="#好" class="headerlink" title="好"></a>好</h2><p>###好</p>
-<p>#好</p>
-<blockquote>
-<p>* </p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;title-Hello&quot;&gt;&lt;a href=&quot;#title-Hello&quot; class=&quot;headerlink&quot; title=&quot;title: Hello&quot;&gt;&lt;/a&gt;title: Hello&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>回顾我的2016</title>
