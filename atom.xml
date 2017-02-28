@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-02-28T06:30:08.240Z</updated>
+  <updated>2017-02-28T08:20:56.102Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>项目总结</title>
     <link href="https://wiestlee.github.io/2017/02/28/tags-%20%20%5B%E6%8A%80%E6%9C%AF,%E6%80%BB%E7%BB%93%5D/"/>
     <id>https://wiestlee.github.io/2017/02/28/tags-  [技术,总结]/</id>
-    <published>2017-02-28T06:30:05.468Z</published>
-    <updated>2017-02-28T06:30:08.240Z</updated>
+    <published>2017-02-28T08:20:52.725Z</published>
+    <updated>2017-02-28T08:20:56.102Z</updated>
     
     <content type="html"><![CDATA[<p>在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：</p>
 <h2 id="项目列表"><a href="#项目列表" class="headerlink" title="项目列表"></a>项目列表</h2><blockquote>
@@ -28,7 +28,7 @@
 <li><a href="http://liweizhenapp.applinzi.com" target="_blank" rel="external">天猫商城</a></li>
 <li>roseonly(一生只送一个人)</li>
 <li>hovercamera 响应式首页</li>
-<li>roseonly 移动端APP</li>
+<li><a href="http://roseonlyone.applinzi.com/" target="_blank" rel="external">roseonly 移动端APP</a></li>
 </ul>
 </blockquote>
 <h2 id="项目介绍一、（pc端roseonly商城）"><a href="#项目介绍一、（pc端roseonly商城）" class="headerlink" title="项目介绍一、（pc端roseonly商城）"></a>项目介绍一、（pc端roseonly商城）</h2><p>roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。<br>用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，从而实现“一生只送一个人”。</p>
@@ -57,7 +57,7 @@
 <h3 id="4、产品列表页"><a href="#4、产品列表页" class="headerlink" title="4、产品列表页"></a>4、产品列表页</h3><p>功能：异步数据加载产品数据，实现按照价格排序，区间排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&apos;SELECT * FORM roseList ORDER BY rosePrice&apos;;//价格升序</div><div class="line">$sql=&apos;SELECT * FROM roseList ORDER BY rosePrice DESC&apos;; //价格降序</div><div class="line">$sql=&quot;SELECT * FROM roseList WHERE roesPrice BETWEEN start=&apos;$start&apos; and end=&apos;$end&apos;&quot;;//区间排序</div></pre></td></tr></table></figure></p>
 <h3 id="5、产品详情页面"><a href="#5、产品详情页面" class="headerlink" title="5、产品详情页面"></a>5、产品详情页面</h3><p>功能：点击切换产品图片，并动态加载产品详情，当滚动到产品详情的位置时，才进行请求数据。<br>1、代码示例：通过判断子节点的长度为0的时候才进行，避免的重复请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(window).on(&apos;scroll&apos;,function()&#123;</div><div class="line">  if($(&apos;body&apos;).scrollTop()&gt;400&amp;&amp;$(&apos;.details_img&apos;).children().length==0)&#123;</div><div class="line">    $.ajax(&#123;...&#125;)</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="6、购物车页面"><a href="#6、购物车页面" class="headerlink" title="6、购物车页面"></a>6、购物车页面</h3><p>功能：购物车的增删改查功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&quot;insert into rose_cart_detail values(null,&apos;$cartId&apos;,&apos;$productId&apos;,1)&quot;;</div><div class="line">$sql=&quot;delete from rose_cart_detail where productId=&apos;$productId&apos;&quot;;</div><div class="line">$sql=&quot;update rose_cart_detail set count=$count where productId=&apos;$productId&apos;&quot;;</div></pre></td></tr></table></figure></p>
-<h3 id="7、订单页面"><a href="#7、订单页面" class="headerlink" title="7、订单页面"></a>7、订单页面</h3><p>####功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。<br>1、当查询到数据库存在该用户曾经提交过收货人的信息时，表单始终为禁用状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(this).attr(&quot;disabled&quot;,&quot;disabled&quot;);</div></pre></td></tr></table></figure></p>
+<h3 id="7、订单页面"><a href="#7、订单页面" class="headerlink" title="7、订单页面"></a>7、订单页面</h3><h4 id="功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。"><a href="#功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。" class="headerlink" title="功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。"></a>功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。</h4><p>1、当查询到数据库存在该用户曾经提交过收货人的信息时，表单始终为禁用状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(this).attr(&quot;disabled&quot;,&quot;disabled&quot;);</div></pre></td></tr></table></figure></p>
 <blockquote>
 <ul>
 <li>支付页面（待完成）</li>
