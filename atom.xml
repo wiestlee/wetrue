@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-02-28T06:23:11.932Z</updated>
+  <updated>2017-02-28T06:25:49.354Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>项目总结</title>
     <link href="https://wiestlee.github.io/2017/02/28/tags-%20%20%5B%E6%8A%80%E6%9C%AF,%E6%80%BB%E7%BB%93%5D/"/>
     <id>https://wiestlee.github.io/2017/02/28/tags-  [技术,总结]/</id>
-    <published>2017-02-28T06:23:08.986Z</published>
-    <updated>2017-02-28T06:23:11.932Z</updated>
+    <published>2017-02-28T06:25:46.730Z</published>
+    <updated>2017-02-28T06:25:49.354Z</updated>
     
     <content type="html"><![CDATA[<p>在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：</p>
 <h2 id="项目列表"><a href="#项目列表" class="headerlink" title="项目列表"></a>项目列表</h2><blockquote>
@@ -31,7 +31,7 @@
 <li>roseonly 移动端APP</li>
 </ul>
 </blockquote>
-<p>##项目介绍一、（pc端roseonly商城）<br>roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。<br>用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。</p>
+<h2 id="项目介绍一、（pc端roseonly商城）"><a href="#项目介绍一、（pc端roseonly商城）" class="headerlink" title="项目介绍一、（pc端roseonly商城）"></a>项目介绍一、（pc端roseonly商城）</h2><p>roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。<br>用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，从而实现“一生只送一个人”。</p>
 <h3 id="整站页面："><a href="#整站页面：" class="headerlink" title="整站页面："></a>整站页面：</h3><blockquote>
 <ul>
 <li>注册页面</li>
