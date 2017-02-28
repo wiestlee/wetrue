@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>项目总结 | 李伟振的博客</title>
+    <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：
+项目列表
+
+天猫">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="项目总结"/>
+    <meta property="og:site_name" content="wiestlee&#39;s blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="wiestlee&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">wiestlee&#39;s blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://tva4.sinaimg.cn/crop.0.0.996.996.180/a26415e9jw8fc20qqr8epj20ro0ro0v0.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">李伟振</p>
+                        <p class="desc">Web前端&lt;/&gt;</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>项目总结</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-02-28T06:06:57.745Z"><a href="/2017/02/28/tags-  [技术,总结]/">2017-02-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/技术/" class="chip pink lighten-1">技术</a>
+        
+            <a href="/tags/总结/" class="chip pink lighten-1">总结</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#项目列表"><span class="section table-of-contents-text">项目列表</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#项目介绍一、（pc端roseonly商城）"><span class="section table-of-contents-text">项目介绍一、（pc端roseonly商城）</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。"><span class="section table-of-contents-text">roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。"><span class="section table-of-contents-text">用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#整站分析："><span class="section table-of-contents-text">整站分析：</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#网站页面："><span class="section table-of-contents-text">网站页面：</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。"><span class="section table-of-contents-text">功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#如何清除谷歌浏览器的自动填充表单的黄色背景："><span class="section table-of-contents-text">如何清除谷歌浏览器的自动填充表单的黄色背景：</span></a></li></ol></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：</p>
+<h2 id="项目列表"><a href="#项目列表" class="headerlink" title="项目列表"></a>项目列表</h2><blockquote>
+<ul>
+<li><a href="http://liweizhenapp.applinzi.com" target="_blank" rel="external">天猫商城</a></li>
+<li>roseonly(一生只送一个人)</li>
+<li>hovercamera 响应式首页</li>
+<li>roseonly 移动端APP<h2 id="项目介绍一、（pc端roseonly商城）"><a href="#项目介绍一、（pc端roseonly商城）" class="headerlink" title="项目介绍一、（pc端roseonly商城）"></a>项目介绍一、（pc端roseonly商城）</h2><h4 id="roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。"><a href="#roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。" class="headerlink" title="roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。"></a>roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。</h4><h4 id="用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。"><a href="#用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。" class="headerlink" title="用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。"></a>用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。</h4><h2 id="整站分析："><a href="#整站分析：" class="headerlink" title="整站分析："></a>整站分析：</h2><h3 id="网站页面："><a href="#网站页面：" class="headerlink" title="网站页面："></a>网站页面：</h3><ul>
+<li>注册页面</li>
+<li>首页  </li>
+<li>产品列表页</li>
+<li>产品详情页面</li>
+<li>购物车页面</li>
+<li>订单页面</li>
+<li>支付页面（待完成）<br>###1、注册页面：<h3 id="功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。"><a href="#功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。" class="headerlink" title="功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。"></a>功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。</h3>1、绘制随机验证码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line">*向客户端输出一个随机的验证码图片，同时在服务器保存该验证码</div><div class="line">*/</div><div class="line">header(&apos;Content-Type: image/png&apos;);</div><div class="line"></div><div class="line">$w = 75;</div><div class="line">$h = 22;</div><div class="line">//在服务器内存中创建一副图像</div><div class="line">$img = imagecreatetruecolor($w, $h);</div><div class="line">//分配一个随机颜色，作为背景颜色</div><div class="line">$c = imagecolorallocate($img, rand(200,200), rand(200,200),rand(200,200));</div><div class="line">//填充一个矩形，作为背景</div><div class="line">imagefilledrectangle($img, 0, 0, $w, $h, $c);</div><div class="line"></div><div class="line"></div><div class="line">//向图像上绘制四个随机的字符</div><div class="line">$src = &apos;ABCDEFGHJKLMNPQRSTWXY3456789&apos;;</div><div class="line">$code = &apos;&apos;;</div><div class="line">for($i=0; $i&lt;4; $i++)&#123;</div><div class="line">  $char = $src[rand(0, strlen($src)-1)];</div><div class="line">  $code .= $char;</div><div class="line">  $c = imagecolorallocate($img,rand(90,90),rand(90,90), rand(90,90));</div><div class="line">  //绘制一个旋转的随机字符，使用指定字体文件</div><div class="line">  $fontSize = rand(12, 18);</div><div class="line">  $angle = rand(-45, 45);</div><div class="line">  $x = 20*$i+5;</div><div class="line">  $y = rand(12, $h);</div><div class="line">  $fontFile = &apos;../font/simhei.ttf&apos;;</div><div class="line">  imagettftext($img,$fontSize,$angle,$x,$y,$c,$fontFile,$char);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">*验证码必须保存在服务器端，同时每个客户端的验证码彼此不同</div><div class="line">*存储中服务器端Session空间中</div><div class="line">*/</div><div class="line">//为当前客户端分配新的Session空间，或查找它已有的Session空间</div><div class="line">session_start();</div><div class="line">$_SESSION[&apos;RegisterVcode&apos;] = $code;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//绘制5条随机干扰线</div><div class="line">for($i=0; $i&lt;0; $i++)&#123;</div><div class="line">  $c = imagecolorallocate($img,rand(0,255),rand(0,255),rand(0,255));</div><div class="line">  imageline($img, rand(0,$w), rand(0,$h), rand(0,$w), rand(0,$h),$c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//把服务器中的图像发送给客户端</div><div class="line">imagepng($img);</div><div class="line">//从服务器的内存中删除随机图片</div><div class="line">imagedestroy($img);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>2、验证随机验证码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> header(&quot;Content-Type:application/json;charset=utf8&quot;);</div><div class="line"> $phone=$_REQUEST[&apos;phone&apos;] or die(&apos;&#123;&quot;code&quot;:-2,&quot;msg&quot;:&quot;手机号不能为空&quot;&#125;&apos;);</div><div class="line"> $vCode=$_REQUEST[&apos;vCode&apos;]or die(&apos;&#123;&quot;code&quot;:-3,&quot;msg&quot;:&quot;请输入4位数字验证码&quot;&#125;&apos;);</div><div class="line"> $pwd=$_REQUEST[&apos;pwd&apos;] or die (&apos;&#123;&quot;code&quot;:-4,&quot;msg&quot;:&quot;请输入正确的密码&quot;&#125;&apos;);</div><div class="line"> require(&quot;init.php&quot;);</div><div class="line">  $sql=&quot;select phone from roseOnlyUser where phone=&apos;$phone&apos;&quot;;</div><div class="line">  mysqli_query($conn,$sql);</div><div class="line">  $result=mysqli_query($conn,$sql);</div><div class="line">  $rows=mysqli_fetch_row($result);</div><div class="line">   session_start();</div><div class="line"> if($rows&gt;0)&#123;</div><div class="line">  $output=[</div><div class="line">      &apos;code&apos;=&gt;-5,</div><div class="line">      &apos;msg&apos;=&gt;&apos;手机号已被注册&apos;,</div><div class="line">     ];</div><div class="line">     echo json_encode($output);</div><div class="line"> &#125;</div><div class="line"> if($vCode!=$_SESSION[&apos;RegisterVcode&apos;])&#123;</div><div class="line">   $output=[</div><div class="line">      &apos;code&apos;=&gt;-6,</div><div class="line">      &apos;msg&apos;=&gt;&apos;验证码错误&apos;</div><div class="line">   ];</div><div class="line">   echo json_encode($output);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> else&#123;</div><div class="line">  $sql=&quot;insert into roseOnlyUser values(null,&apos;$phone&apos;,&apos;$pwd&apos;)&quot;;</div><div class="line">  mysqli_query($conn,$sql);</div><div class="line">  $uid=mysqli_insert_id($conn);</div><div class="line">     $output=[</div><div class="line">      &apos;code&apos;=&gt;1,</div><div class="line">      &apos;msg&apos;=&gt;&apos;新用户添加成功&apos;,</div><div class="line">      &apos;uid&apos;=&gt;$uid</div><div class="line">     ];</div><div class="line">     echo json_encode($output);</div><div class="line">   &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>3、最后客户端进行ajax异步验证（这里不在赘述代码）<br>4、验证通过后向数据库插入一条用户数据。</p>
+<p>###2、登录页面</p>
+<ol>
+<li>通过用户手机号和用户密码向数据库查找用户信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sql = &quot;SELECT * FROM roseOnlyUser WHERE phone=&apos;$phone&apos; AND pwd=&apos;$pwd&apos;&quot;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2、使用sessionStorage，保存用户的手机号/用户名到本地<br>3、异步加载页面的头部，假如本地存在用户的登录信息，就修改加载的头部，把用户的信息添加上去，添加退出登录按钮,清除本地的的回话储存。因为每个页面都要使用这个功能，所以我把这一段js代码直接写在了要异步加载的请求头部中，也就是PHP的header部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sessionStorage.clear();</div></pre></td></tr></table></figure></p>
+<p>##解决问题：</p>
+<h4 id="如何清除谷歌浏览器的自动填充表单的黄色背景："><a href="#如何清除谷歌浏览器的自动填充表单的黄色背景：" class="headerlink" title="如何清除谷歌浏览器的自动填充表单的黄色背景："></a>如何清除谷歌浏览器的自动填充表单的黄色背景：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">input:-webkit-autofill &#123;</div><div class="line">    -webkit-box-shadow: 0 0 0 1000px white inset !important;</div><div class="line">&#125;         //实现颜色可以自定义更改</div></pre></td></tr></table></figure>
+<p>###3、首页  </p>
+<p>####功能：轮播图，选项卡的自动切换和手动切换。<br>1、轮播：点击条状按钮，获取index值，用index*1240px（图片的宽度），来改变的图片的位移，向右为正，想左为负，然后用一个定时器，来调整index的值，每两秒钟让index+1，当hover时候清除定时器，否则，调用自动轮播的函数。<br>2、选项卡切换：自动轮播同上</p>
+<p>###4、产品列表页</p>
+<p>###功能：异步数据加载产品数据，实现按照价格排序，区间排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&apos;SELECT * FORM roseList ORDER BY rosePrice&apos;;//价格升序</div><div class="line">$sql=&apos;SELECT * FROM roseList ORDER BY rosePrice DESC&apos;; //价格降序</div><div class="line">$sql=&quot;SELECT * FROM roseList WHERE roesPrice BETWEEN start=&apos;$start&apos; and end=&apos;$end&apos;&quot;;//区间排序</div></pre></td></tr></table></figure></p>
+<p>###5、产品详情页面</p>
+<p>###功能：点击切换产品图片，并动态加载产品详情，当滚动到产品详情的位置时，才进行请求数据。<br>1、代码示例：通过判断子节点的长度为0的时候才进行，避免的重复请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(window).on(&apos;scroll&apos;,function()&#123;</div><div class="line">  if($(&apos;body&apos;).scrollTop()&gt;400&amp;&amp;$(&apos;.details_img&apos;).children().length==0)&#123;</div><div class="line">    $.ajax(&#123;...&#125;)</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>###6、购物车页面</p>
+<p>###功能：购物车的增删改查功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&quot;insert into rose_cart_detail values(null,&apos;$cartId&apos;,&apos;$productId&apos;,1)&quot;;</div><div class="line">$sql=&quot;delete from rose_cart_detail where productId=&apos;$productId&apos;&quot;;</div><div class="line">$sql=&quot;update rose_cart_detail set count=$count where productId=&apos;$productId&apos;&quot;;</div></pre></td></tr></table></figure></p>
+<p>###7、订单页面</p>
+<p>####功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。<br>1、当查询到数据库存在该用户曾经提交过收货人的信息时，表单始终为禁用状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(this).attr(&quot;disabled&quot;,&quot;disabled&quot;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>支付页面（待完成）</li>
+</ul>
+</blockquote>
+<p>作者 [李伟振]<br>2017 年 02月 28日    </p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/02/02/2/" rel="next" title="回顾我的2016">
+    下一篇：回顾我的2016
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/2724468201/profile?is_search=0&amp;is_all=1" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/wiestlee/wiestlee.github.io" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="https://wiestlee.github.io/" target="_blank">李伟振的技术博客</a>
+                
+                    <a class="social-link" href="https://github.com/wiestlee" target="_blank">Github地址（测试友情链接）</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>

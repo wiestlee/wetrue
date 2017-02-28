@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-02-02T14:41:22.148Z</updated>
+  <updated>2017-02-28T06:06:58.001Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目总结</title>
+    <link href="https://wiestlee.github.io/2017/02/28/tags-%20%20%5B%E6%8A%80%E6%9C%AF,%E6%80%BB%E7%BB%93%5D/"/>
+    <id>https://wiestlee.github.io/2017/02/28/tags-  [技术,总结]/</id>
+    <published>2017-02-28T06:06:57.745Z</published>
+    <updated>2017-02-28T06:06:58.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：</p>
+<h2 id="项目列表"><a href="#项目列表" class="headerlink" title="项目列表"></a>项目列表</h2><blockquote>
+<ul>
+<li><a href="http://liweizhenapp.applinzi.com" target="_blank" rel="external">天猫商城</a></li>
+<li>roseonly(一生只送一个人)</li>
+<li>hovercamera 响应式首页</li>
+<li>roseonly 移动端APP<h2 id="项目介绍一、（pc端roseonly商城）"><a href="#项目介绍一、（pc端roseonly商城）" class="headerlink" title="项目介绍一、（pc端roseonly商城）"></a>项目介绍一、（pc端roseonly商城）</h2><h4 id="roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。"><a href="#roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。" class="headerlink" title="roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。"></a>roseonly，是一家网络花店，其定位是中国高端品牌花店，而该网站的一个特点是在该花店买花，“一生只送一人”。</h4><h4 id="用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。"><a href="#用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。" class="headerlink" title="用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。"></a>用技术的角度去解释：它是一个商城类的购物网站，而该网站的需求是用户可以在在网站购买商品，但收货人只能填写一个，一个用户的ID一旦绑定一位收货人的姓名，确认后就无法修改，“一生只送一个人”。</h4><h2 id="整站分析："><a href="#整站分析：" class="headerlink" title="整站分析："></a>整站分析：</h2><h3 id="网站页面："><a href="#网站页面：" class="headerlink" title="网站页面："></a>网站页面：</h3><ul>
+<li>注册页面</li>
+<li>首页  </li>
+<li>产品列表页</li>
+<li>产品详情页面</li>
+<li>购物车页面</li>
+<li>订单页面</li>
+<li>支付页面（待完成）<br>###1、注册页面：<h3 id="功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。"><a href="#功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。" class="headerlink" title="功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。"></a>功能：ajax异步请求验证用户是否存在，用session存储技术实现随机验证码服务器端验证。更安全的保护用户信息。</h3>1、绘制随机验证码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line">*向客户端输出一个随机的验证码图片，同时在服务器保存该验证码</div><div class="line">*/</div><div class="line">header(&apos;Content-Type: image/png&apos;);</div><div class="line"></div><div class="line">$w = 75;</div><div class="line">$h = 22;</div><div class="line">//在服务器内存中创建一副图像</div><div class="line">$img = imagecreatetruecolor($w, $h);</div><div class="line">//分配一个随机颜色，作为背景颜色</div><div class="line">$c = imagecolorallocate($img, rand(200,200), rand(200,200),rand(200,200));</div><div class="line">//填充一个矩形，作为背景</div><div class="line">imagefilledrectangle($img, 0, 0, $w, $h, $c);</div><div class="line"></div><div class="line"></div><div class="line">//向图像上绘制四个随机的字符</div><div class="line">$src = &apos;ABCDEFGHJKLMNPQRSTWXY3456789&apos;;</div><div class="line">$code = &apos;&apos;;</div><div class="line">for($i=0; $i&lt;4; $i++)&#123;</div><div class="line">  $char = $src[rand(0, strlen($src)-1)];</div><div class="line">  $code .= $char;</div><div class="line">  $c = imagecolorallocate($img,rand(90,90),rand(90,90), rand(90,90));</div><div class="line">  //绘制一个旋转的随机字符，使用指定字体文件</div><div class="line">  $fontSize = rand(12, 18);</div><div class="line">  $angle = rand(-45, 45);</div><div class="line">  $x = 20*$i+5;</div><div class="line">  $y = rand(12, $h);</div><div class="line">  $fontFile = &apos;../font/simhei.ttf&apos;;</div><div class="line">  imagettftext($img,$fontSize,$angle,$x,$y,$c,$fontFile,$char);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">*验证码必须保存在服务器端，同时每个客户端的验证码彼此不同</div><div class="line">*存储中服务器端Session空间中</div><div class="line">*/</div><div class="line">//为当前客户端分配新的Session空间，或查找它已有的Session空间</div><div class="line">session_start();</div><div class="line">$_SESSION[&apos;RegisterVcode&apos;] = $code;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//绘制5条随机干扰线</div><div class="line">for($i=0; $i&lt;0; $i++)&#123;</div><div class="line">  $c = imagecolorallocate($img,rand(0,255),rand(0,255),rand(0,255));</div><div class="line">  imageline($img, rand(0,$w), rand(0,$h), rand(0,$w), rand(0,$h),$c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//把服务器中的图像发送给客户端</div><div class="line">imagepng($img);</div><div class="line">//从服务器的内存中删除随机图片</div><div class="line">imagedestroy($img);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>2、验证随机验证码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> header(&quot;Content-Type:application/json;charset=utf8&quot;);</div><div class="line"> $phone=$_REQUEST[&apos;phone&apos;] or die(&apos;&#123;&quot;code&quot;:-2,&quot;msg&quot;:&quot;手机号不能为空&quot;&#125;&apos;);</div><div class="line"> $vCode=$_REQUEST[&apos;vCode&apos;]or die(&apos;&#123;&quot;code&quot;:-3,&quot;msg&quot;:&quot;请输入4位数字验证码&quot;&#125;&apos;);</div><div class="line"> $pwd=$_REQUEST[&apos;pwd&apos;] or die (&apos;&#123;&quot;code&quot;:-4,&quot;msg&quot;:&quot;请输入正确的密码&quot;&#125;&apos;);</div><div class="line"> require(&quot;init.php&quot;);</div><div class="line">  $sql=&quot;select phone from roseOnlyUser where phone=&apos;$phone&apos;&quot;;</div><div class="line">  mysqli_query($conn,$sql);</div><div class="line">  $result=mysqli_query($conn,$sql);</div><div class="line">  $rows=mysqli_fetch_row($result);</div><div class="line">   session_start();</div><div class="line"> if($rows&gt;0)&#123;</div><div class="line">  $output=[</div><div class="line">      &apos;code&apos;=&gt;-5,</div><div class="line">      &apos;msg&apos;=&gt;&apos;手机号已被注册&apos;,</div><div class="line">     ];</div><div class="line">     echo json_encode($output);</div><div class="line"> &#125;</div><div class="line"> if($vCode!=$_SESSION[&apos;RegisterVcode&apos;])&#123;</div><div class="line">   $output=[</div><div class="line">      &apos;code&apos;=&gt;-6,</div><div class="line">      &apos;msg&apos;=&gt;&apos;验证码错误&apos;</div><div class="line">   ];</div><div class="line">   echo json_encode($output);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> else&#123;</div><div class="line">  $sql=&quot;insert into roseOnlyUser values(null,&apos;$phone&apos;,&apos;$pwd&apos;)&quot;;</div><div class="line">  mysqli_query($conn,$sql);</div><div class="line">  $uid=mysqli_insert_id($conn);</div><div class="line">     $output=[</div><div class="line">      &apos;code&apos;=&gt;1,</div><div class="line">      &apos;msg&apos;=&gt;&apos;新用户添加成功&apos;,</div><div class="line">      &apos;uid&apos;=&gt;$uid</div><div class="line">     ];</div><div class="line">     echo json_encode($output);</div><div class="line">   &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>3、最后客户端进行ajax异步验证（这里不在赘述代码）<br>4、验证通过后向数据库插入一条用户数据。</p>
+<p>###2、登录页面</p>
+<ol>
+<li>通过用户手机号和用户密码向数据库查找用户信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sql = &quot;SELECT * FROM roseOnlyUser WHERE phone=&apos;$phone&apos; AND pwd=&apos;$pwd&apos;&quot;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2、使用sessionStorage，保存用户的手机号/用户名到本地<br>3、异步加载页面的头部，假如本地存在用户的登录信息，就修改加载的头部，把用户的信息添加上去，添加退出登录按钮,清除本地的的回话储存。因为每个页面都要使用这个功能，所以我把这一段js代码直接写在了要异步加载的请求头部中，也就是PHP的header部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sessionStorage.clear();</div></pre></td></tr></table></figure></p>
+<p>##解决问题：</p>
+<h4 id="如何清除谷歌浏览器的自动填充表单的黄色背景："><a href="#如何清除谷歌浏览器的自动填充表单的黄色背景：" class="headerlink" title="如何清除谷歌浏览器的自动填充表单的黄色背景："></a>如何清除谷歌浏览器的自动填充表单的黄色背景：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">input:-webkit-autofill &#123;</div><div class="line">    -webkit-box-shadow: 0 0 0 1000px white inset !important;</div><div class="line">&#125;         //实现颜色可以自定义更改</div></pre></td></tr></table></figure>
+<p>###3、首页  </p>
+<p>####功能：轮播图，选项卡的自动切换和手动切换。<br>1、轮播：点击条状按钮，获取index值，用index*1240px（图片的宽度），来改变的图片的位移，向右为正，想左为负，然后用一个定时器，来调整index的值，每两秒钟让index+1，当hover时候清除定时器，否则，调用自动轮播的函数。<br>2、选项卡切换：自动轮播同上</p>
+<p>###4、产品列表页</p>
+<p>###功能：异步数据加载产品数据，实现按照价格排序，区间排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&apos;SELECT * FORM roseList ORDER BY rosePrice&apos;;//价格升序</div><div class="line">$sql=&apos;SELECT * FROM roseList ORDER BY rosePrice DESC&apos;; //价格降序</div><div class="line">$sql=&quot;SELECT * FROM roseList WHERE roesPrice BETWEEN start=&apos;$start&apos; and end=&apos;$end&apos;&quot;;//区间排序</div></pre></td></tr></table></figure></p>
+<p>###5、产品详情页面</p>
+<p>###功能：点击切换产品图片，并动态加载产品详情，当滚动到产品详情的位置时，才进行请求数据。<br>1、代码示例：通过判断子节点的长度为0的时候才进行，避免的重复请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(window).on(&apos;scroll&apos;,function()&#123;</div><div class="line">  if($(&apos;body&apos;).scrollTop()&gt;400&amp;&amp;$(&apos;.details_img&apos;).children().length==0)&#123;</div><div class="line">    $.ajax(&#123;...&#125;)</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>###6、购物车页面</p>
+<p>###功能：购物车的增删改查功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$sql=&quot;insert into rose_cart_detail values(null,&apos;$cartId&apos;,&apos;$productId&apos;,1)&quot;;</div><div class="line">$sql=&quot;delete from rose_cart_detail where productId=&apos;$productId&apos;&quot;;</div><div class="line">$sql=&quot;update rose_cart_detail set count=$count where productId=&apos;$productId&apos;&quot;;</div></pre></td></tr></table></figure></p>
+<p>###7、订单页面</p>
+<p>####功能：提交用户的购买信息，完成收货人提交后无法更改功能（表单禁用）。<br>1、当查询到数据库存在该用户曾经提交过收货人的信息时，表单始终为禁用状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(this).attr(&quot;disabled&quot;,&quot;disabled&quot;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>支付页面（待完成）</li>
+</ul>
+</blockquote>
+<p>作者 [李伟振]<br>2017 年 02月 28日    </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://wiestlee.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="总结" scheme="https://wiestlee.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>回顾我的2016</title>
