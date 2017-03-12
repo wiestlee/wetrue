@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[js中如何获取多个返回值]]></title>
+      <url>https://wiestlee.github.io/2017/03/12/tags-%20%20%5BJavaScript%5D/</url>
+      <content type="html"><![CDATA[<h3 id="在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法："><a href="#在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法：" class="headerlink" title="在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法："></a>在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法：</h3><p>1、首先，如何接收一个返回值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  function fun1()&#123;</div><div class="line">     var a = 6;</div><div class="line">     return a;</div><div class="line">  &#125;</div><div class="line">  function fun2()&#123;</div><div class="line">     var i = fun1();</div><div class="line">     console.log(i);</div><div class="line">  &#125;</div><div class="line">  fun2();//6</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2、使用数组返回多个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  function fun1()&#123;</div><div class="line">    var names = [&quot;jack&quot;,&quot;tom&quot;];</div><div class="line">    return names;</div><div class="line">  &#125;</div><div class="line">  function fun2()&#123;</div><div class="line">     var names = fun1();</div><div class="line">     console.log(names);</div><div class="line">     console.log(names[0]);</div><div class="line">  &#125;</div><div class="line">  function fun3()&#123;</div><div class="line">     var names = fun1();</div><div class="line">     console.log(names[0]);</div><div class="line">  &#125;</div><div class="line">  fun2()// [&quot;jack&quot;,&quot;tom&quot;] </div><div class="line">  fun3()// jack</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>3、使用json数据返回，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  function fun1()&#123;</div><div class="line">     var info  = &#123;&quot;name&quot;:&quot;jack&quot;,&quot;age&quot;:21&#125;;</div><div class="line">     return info;</div><div class="line">  &#125;</div><div class="line">  function fun2()&#123;</div><div class="line">     var info = fun1();</div><div class="line">     var name = info[&quot;name&quot;];</div><div class="line">     var age  = info[&quot;age&quot;];</div><div class="line">     console.log(`我的名字是:$&#123;name&#125;\n我的年龄是$&#123;age&#125;`);</div><div class="line">  &#125;</div><div class="line">  fun2();//我的名字是:jack</div><div class="line">         //我的年龄是21</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>4、使用对象的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function fun1()&#123;</div><div class="line">     var info  = &#123;</div><div class="line">         name:&quot;jack&quot;,</div><div class="line">         age:21</div><div class="line">         &#125;;</div><div class="line">     return info;</div><div class="line">  &#125;</div><div class="line">  function fun2()&#123;</div><div class="line">     var info = fun1();</div><div class="line">     var name = info.name;</div><div class="line">     var age  = info.age;</div><div class="line">     console.log(`我的名字是:$&#123;name&#125;\n我的年龄是$&#123;age&#125;`);</div><div class="line">  &#125;</div><div class="line">  fun2();</div></pre></td></tr></table></figure></p>
+<p>作者 [李伟振]     </p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[项目总结]]></title>
       <url>https://wiestlee.github.io/2017/02/28/tags-%20%20%5B%E6%8A%80%E6%9C%AF,%E6%80%BB%E7%BB%93%5D/</url>
       <content type="html"><![CDATA[<p>在历时四个月的学习中，自己在尝试着去做一个相对完整的项目，但是每一阶段都在经历着知识上的突破和技术的变革，残留的知识碎片在积累的越来越多，往往来不及整理，就开始了新的知识。想着在结束的时候整理一下，但是留下的坑有点多，导致每一个项目都不太完善，下面列举一下自己的项目并做下技术总结：</p>
@@ -181,16 +200,16 @@
   
     
     <entry>
+      <title><![CDATA[读书]]></title>
+      <url>https://wiestlee.github.io/reading/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>https://wiestlee.github.io/about/index.html</url>
       <content type="html"><![CDATA[<p>大家好，我是李伟振。欢迎来到我的个人技术博客。</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书]]></title>
-      <url>https://wiestlee.github.io/reading/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
