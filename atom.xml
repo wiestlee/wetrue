@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-03-12T15:01:31.408Z</updated>
+  <updated>2017-03-13T01:21:05.623Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>点击页面空白处，弹窗消失的实现方法</title>
+    <link href="https://wiestlee.github.io/2017/03/13/tags-%5Bjavascript%5D-2/"/>
+    <id>https://wiestlee.github.io/2017/03/13/tags-[javascript]-2/</id>
+    <published>2017-03-12T16:00:00.000Z</published>
+    <updated>2017-03-13T01:21:05.623Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"><a href="#在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。" class="headerlink" title="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"></a>在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。</h3><p>下面是在stackoverflow上看到的，比较简单的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(document).click(function(e)&#123;</div><div class="line">  var target_area = $(&quot;目标区域&quot;);//设置目标区域</div><div class="line">  if(!target_area.is(e.target)&amp;&amp;target_area.has(e.target).length === 0)&#123;</div><div class="line">    some code....</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">/*</div><div class="line"> 原理说明：</div><div class="line"> 1、事件对象不是目标区域</div><div class="line"> 2、事件对象不是目标区域的子元素</div><div class="line">*/</div></pre></td></tr></table></figure></p>
+<p>作者 [李伟振]     </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。&quot;&gt;&lt;a href=&quot;#在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://wiestlee.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>js中如何获取多个返回值</title>

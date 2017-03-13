@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[点击页面空白处，弹窗消失的实现方法]]></title>
+      <url>https://wiestlee.github.io/2017/03/13/tags-%5Bjavascript%5D-2/</url>
+      <content type="html"><![CDATA[<h3 id="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"><a href="#在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。" class="headerlink" title="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"></a>在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。</h3><p>下面是在stackoverflow上看到的，比较简单的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(document).click(function(e)&#123;</div><div class="line">  var target_area = $(&quot;目标区域&quot;);//设置目标区域</div><div class="line">  if(!target_area.is(e.target)&amp;&amp;target_area.has(e.target).length === 0)&#123;</div><div class="line">    some code....</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">/*</div><div class="line"> 原理说明：</div><div class="line"> 1、事件对象不是目标区域</div><div class="line"> 2、事件对象不是目标区域的子元素</div><div class="line">*/</div></pre></td></tr></table></figure></p>
+<p>作者 [李伟振]     </p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js中如何获取多个返回值]]></title>
       <url>https://wiestlee.github.io/2017/03/12/tags-%20%20%5BJavaScript%5D/</url>
       <content type="html"><![CDATA[<h3 id="在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法："><a href="#在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法：" class="headerlink" title="在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法："></a>在JS编程中，我们往往需要一个方法来返回一个或多个值，我们可以使用一下方法：</h3><h4 id="1、首先，如何接收一个返回值"><a href="#1、首先，如何接收一个返回值" class="headerlink" title="1、首先，如何接收一个返回值:"></a>1、首先，如何接收一个返回值:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  function fun1()&#123;</div><div class="line">     var a = 6;</div><div class="line">     return a;</div><div class="line">  &#125;</div><div class="line">  function fun2()&#123;</div><div class="line">     var i = fun1();</div><div class="line">     console.log(i);</div><div class="line">  &#125;</div><div class="line">  fun2();//6</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
