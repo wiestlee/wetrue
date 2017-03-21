@@ -7,13 +7,15 @@
 
     
 
-    <title>李伟振的博客</title>
+    <title>HTML5前端性能优化-页面预加载 | 李伟振的博客</title>
     <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="HTML5前端性能优化-页面预加载"/>
     <meta property="og:site_name" content="wiestlee&#39;s blog"/>
 
     
@@ -190,61 +192,38 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
-<div class="slider">
-    <ul class="slides">
-    
-       <li>
-           <a href="http://tmallindex.applinzi.com/">
-               <img class="slider-image" src="http://raytaylorlin-blog.qiniudn.com/image%2Fslider%2Fblogv3.png">
-               <div class="caption left-align">
-                 <h4>你好，世界!</h3>
-                 <h5 class="light grey-text text-lighten-3">新的一年开启新的征程.</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="http://myroseonly.applinzi.com/roseOnlyindex.html">
-               <img class="slider-image" src="http://raytaylorlin-blog.qiniudn.com/image%2Fslider%2Fabout.png">
-               <div class="caption left-align">
-                 <h4>roseonly官网.</h3>
-                 <h5 class="light grey-text text-lighten-3">送给唯一的你.</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="https://wiestlee.github.io/yanxuan/">
-               <img class="slider-image" src="http://raytaylorlin-blog.qiniudn.com/image%2Fslider%2Fblogv3.png">
-               <div class="caption right-align">
-                 <h4>2017做好移动端</h3>
-                 <h5 class="light grey-text text-lighten-3">MVC与MVVM.</h5>
-               </div>
-           </a>
-       </li>
-    
-   </ul>
- </div>
+        
+    </div>
+</nav>
 
-
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
+<article>
     <div class="card">
         <div class="card-content">
+            
+
             <div class="article-title">
                 
     
-        <h1 class="indigo-link-context"><a href="/2017/03/18/tags-  [HTML]-1/">HTML5前端性能优化-页面预加载</a></h1>
+        <h1>HTML5前端性能优化-页面预加载</h1>
     
 
 
             </div>
-
             <time class="pink-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/tags-  [HTML]-1/">2017-03-18</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -254,213 +233,77 @@
     </div>
 
 
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#什么是资源预加载："><span class="section table-of-contents-text">什么是资源预加载：</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#HTML5页面资源预加载-Link-prefetch-写法"><span class="section table-of-contents-text">HTML5页面资源预加载(Link prefetch)写法</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#什么情况下应该预加载页面资源"><span class="section table-of-contents-text">什么情况下应该预加载页面资源</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#页面资源预加载-Link-prefetch-注意事项"><span class="section table-of-contents-text">页面资源预加载(Link prefetch)注意事项</span></a></li></ol>
+</div>
 
-            
-        </div>
 
-        
-    </div>
-</article>
+            <div class="entry pink-link-context">
+                <p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
+<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
+<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
+</blockquote>
+<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
+<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
+<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
+<blockquote>
+<ul>
+<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
+<li>预加载那些整个网站通用的图片。</li>
+<li>预加载网站上搜索结果的下一页。<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</li>
+<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
+<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
+</ul>
+</blockquote>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
                 
-    
-        <h1 class="indigo-link-context"><a href="/2017/03/18/tags-  [JavaScript]-3/">HTML全局属性</a></h1>
-    
+
+
+<p class="pink-link-context">
+    <a href="/2017/03/18/tags-  [JavaScript]-3/" rel="next" title="HTML全局属性">
+    下一篇：HTML全局属性
+  </a>
+</p>
 
 
             </div>
-
-            <time class="pink-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/tags-  [JavaScript]-3/">2017-03-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
-        
-    </div>
-
-
-
-            
+			
         </div>
-
-        
     </div>
 </article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/03/13/tags-[javascript]-2/">点击页面空白处，弹窗消失的实现方法</a></h1>
-    
 
 
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/03/18/tags-  [HTML]-1/" data-title="HTML5前端性能优化-页面预加载" data-url="https://wiestlee.github.io/2017/03/18/tags-  [HTML]-1/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'wiestlee'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
             </div>
-
-            <time class="pink-link-context" datetime="2017-03-12T16:00:00.000Z"><a href="/2017/03/13/tags-[javascript]-2/">2017-03-13</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
-        
-    </div>
-
-
-
-            
         </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/03/12/tags-  [JavaScript]/">js中如何获取多个返回值</a></h1>
-    
+    </section>
 
 
-            </div>
-
-            <time class="pink-link-context" datetime="2017-03-12T15:01:26.010Z"><a href="/2017/03/12/tags-  [JavaScript]/">2017-03-12</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/02/28/tags-  [技术,总结]/">项目总结</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-02-28T08:20:52.725Z"><a href="/2017/02/28/tags-  [技术,总结]/">2017-02-28</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/技术/" class="chip pink lighten-1">技术</a>
-        
-            <a href="/tags/总结/" class="chip pink lighten-1">总结</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/02/02/2/">回顾我的2016</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-02-02T14:41:19.775Z"><a href="/2017/02/02/2/">2017-02-02</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/日常/" class="chip pink lighten-1">日常</a>
-        
-            <a href="/tags/随笔/" class="chip pink lighten-1">随笔</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/01/22/hello-world/">Hello World</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-01-22T13:57:18.706Z"><a href="/2017/01/22/hello-world/">2017-01-22</a></time>
-
-            
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-
-    <ul class="pagination center-align">
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="active pink"><a href="/">1</a></li>
-    
-    
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
 
 </div>
 
