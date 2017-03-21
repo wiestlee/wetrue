@@ -4,6 +4,89 @@
   
     
     <entry>
+      <title><![CDATA[HTML全局属性]]></title>
+      <url>https://wiestlee.github.io/2017/03/18/tags-%20%20%5BJavaScript%5D-3/</url>
+      <content type="html"><![CDATA[<p>HTML 定义了少量的属性，这些属性适用于所有的HTML elements，这些属性可以用在所有的element中，尽管有些属性对一些element没什么作用。</p>
+<h3 id="accesskey"><a href="#accesskey" class="headerlink" title="accesskey"></a>accesskey</h3><p>这个属性提供了一种使用快捷键访问当前元素的途径。它是用一个字符（单个Unicode code）列表的独立规范构成。浏览器应该使用键盘的第一布局。</p>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><p>这个属性是一个element的class的独立规范列表。class允许css和javascript通过class选择器或者类似下面的DOM方法来选择和访问element<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Document.getElementsByClassName(&quot;className&quot;);</div></pre></td></tr></table></figure></p>
+<h3 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a>contenteditable</h3><p>HTML5 :这个可枚举的属性表示这个<strong><em>element可以被用户编辑</em></strong>。如果是这样，浏览器会修改widget让它允许编辑。这个属性必须拥有以下值中的其中一个：</p>
+<blockquote>
+<ul>
+<li>true 或者空字符串,表明这个element可编辑;</li>
+<li>false, 表明这个element一定不能被编辑.</li>
+</ul>
+</blockquote>
+<p>如果这个属性没有被设置，他的默认值会继承他父element的。<br><strong>使用说明: 这个属性是一个可枚举的属性，而不是一个布尔属性。这意味着true,false或空字符串的显式使用是强制的正确使用方式是：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div contenteditable=&quot;true&quot;&gt;Example Label&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="data"><a href="#data" class="headerlink" title="data-*"></a>data-*</h3><p>HTML5 这类的属性，被称为自定义属性，允许HTML与和它对应DOM表现形式之间的专有信息交换，这或许对script来说有用。这样被设置了这个属性的element就可以通过的HTMLElement的接口访问所有的自定义数据。HTMLElement.dataset属性提供了访问它们的权限。<br><strong><em> </em>可以被任何符合以下限制的the producton rule of xml names(xml的命名规则)代替：*</strong></p>
+<blockquote>
+<ul>
+<li>名字不能以xml开头，除此之外其他任何情形都可是使用这3个字母； </li>
+<li>名字不能含有分号；</li>
+<li>名字不能含有大写字母。</li>
+</ul>
+</blockquote>
+<p><strong><em> 注意：HTMLElement.dataset是一个 StringMap。一个名叫data-test-value的自定义属性可以通过HTMLElment.dataset.testValue来访问，属性的名字中的中线(U+002D)被挨着它字母的大写字母代替了（驼峰命名） </em></strong></p>
+<h3 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h3><p>这个可枚举属性表明element的文本方向。它可以有以下值：</p>
+<blockquote>
+<ul>
+<li>ltr, left to right，适用于从左向右写的语言（比如：英语）；</li>
+<li>rtl, right to left，适用于从右向左写的语言（比如：阿拉伯语）</li>
+<li>auto, 由代理决定。用一个最基础的算法来解析element中的字符，如果发现有一个字符具有很强的方向性，那么就把这个方向作为整个element的方向。<h3 id="draggable"><a href="#draggable" class="headerlink" title="draggable"></a>draggable</h3>这个可枚举的属性决定一个element是否能够被拖动，可以使用Drag and Drop API。它的能使用的值如下：</li>
+<li>true, 表示这个element可以被拖动</li>
+<li>false, 表示这个值不可以被拖动</li>
+</ul>
+</blockquote>
+<p>如果这个属性没有被设置，默认是auto,这就意味着它的行为默认由浏览器定义。<br><strong><em> 这个属性是一个可枚举的属性，但不是一个布尔类型属性。这意味着显式使用true 或flase其中之一是强制性的，像这样的简写<label draggable="">Example Label</label>是不允许的。正确用法是<label draggable="true">Example Label</label>。 </em></strong></p>
+<h3 id="dropzone"><a href="#dropzone" class="headerlink" title="dropzone"></a>dropzone</h3><p> 这个可枚举的属性决定丢到一个element上的内容类型，可以使用的Drag and Drop API。它能够使用的值如下：</p>
+<blockquote>
+<ul>
+<li>copy, 表示丢放时会创建一个被拖拽element的副本；</li>
+<li>move, 表示被拖拽的element被移动到这个新位置；</li>
+<li>link, 将会给拖拽的数据（dragged data）创建一个链接；<h3 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h3>这个布尔（Boolean）属性表示element还没有或是不再存在，当然这都是相对的。例如，你经常在页面上使用隐藏element,只有在登录处理完成后才可以被使用。浏览器不渲染这样的element。<h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3>这个属性是唯一的标识，它在整个document里应该是唯一的。当需要链接（使用片段标识符，锚点），执行脚本，控制样式时，可以用它来定位识别元素。<h3 id="lang"><a href="#lang" class="headerlink" title="lang"></a>lang</h3>这个属性用于定义element的语言。不管这个element能不能够被编辑，都应该写上这个属性。这个标签包含单个条目值，它的格式规范定义在 Tags for Identifying Languages (BCP47)(BCP47)IETF 文档中。如果标签的内容是空字符串，那么语言就会被设置为unknown；如果标签的内容是无效的，它就被设置为 invalid<h3 id="spellcheck"><a href="#spellcheck" class="headerlink" title="spellcheck"></a>spellcheck</h3>这个可枚举的属性定义element是否检查拼写错误。它的值可以是以下：</li>
+<li>true, 表示如果可能的话，element应该被检查拼写错误；</li>
+<li>false, 表示element不应该检查拼写错误；</li>
+</ul>
+</blockquote>
+<p>如果这个属性没有被设置，他默认的值是element的类型以及浏览器定义的。它也可能是 inherited,这意味着element的元素内容将被检查拼写错误，如果离它最近的祖先元素有spellcheck并且值为true。<br><strong><em> 这个属性是可枚举的，不是一个布尔属性。这意味着显式使用true 或 false 其中之一是强制性的。这样简写<label spellcheck="">Example Label</label> 是不允许的。这确的写法应该是<label spellcheck="true">Example Label</label>。<br>对于浏览器来说，这个属性只是一个提示，浏览器并不需要能够去验证拼写错误。通常不可编辑的element是不检查拼写错误的，即使spellcheck的值是true并且浏览器也支持拼写检查。 </em></strong></p>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p>这个属性包含CSS样式声明，被应用到元素上。注意推荐将它定义在其他文件里。这个属性和<style>element主要的目的是快速编写样式，例如用来测试想要的效果。</p>
+<h3 id="tabindex"><a href="#tabindex" class="headerlink" title="tabindex"></a>tabindex</h3><p>这个整数类型的属性决定element是否可以获得焦点，如果它参与到排序的键盘导航，就可以定位它。它可能需要几个值：</p>
+<blockquote>
+<ul>
+<li>负数意味这element不可以获得焦点，也不可以通过排序的键盘导航到达；</li>
+<li>0意味着element可以通过排序的键盘导航到达，但是相对顺序取决于平台惯例；</li>
+<li>一个正数意味着可以通过排序的键盘导航获得焦点并到达。相对顺序去决议该属性的值，按照tabindex的增值排序。如果几个element有相同的tabindex,他们的相对顺序取决于他们在document中的位置。</li>
+</ul>
+</blockquote>
+<p>在排序的键盘导航单上，如果一个元素的tabindex的值是一个0或者无效值或没有该属性，那么它应该被放在值是正数的element后边。</p>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>这个属性包含的的是文本信息，这信息代表element自己包含的内容的公告。这样的信息一般会包含，但是不是必要的，作为用户一个提示工具。这是几个关于这个属性的用法：</p>
+<blockquote>
+<ul>
+<li>Link: 关于被链接文档的一个标题或一段描述；</li>
+<li>和图片类似的媒体element:一段描述或相关的可信度；</li>
+<li>Paragraph: 脚注活评论；</li>
+<li>Quotation: 关于作者等一些信息。</li>
+</ul>
+</blockquote>
+<p>如果这个属性清除了，这意味着离它最近的祖先元素的title和它相关（能够相应地成为这个元素的提示工具）。如果这个属性是空字符串，这很明显的表示离它最近的父元素的title和它没关系（不能作为这个元素的提示工具）。</p>
+<h3 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h3><p>这是一个可枚举的属性，用于确定当页面进行本地化(localized)时，元素的属性值以及元素的文本(Text)子节点中的内容是否要进行翻译。其可取的值如下：</p>
+<blockquote>
+<ul>
+<li>空字符串(empty)或者 “yes”，表示这个元素相关的内容将会被翻译</li>
+<li>“no”，表示这个元素相关的内容不会被翻译<br>这篇文章有帮助吗？</li>
+</ul>
+</blockquote>
+</style></p>]]></content>
+      
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[点击页面空白处，弹窗消失的实现方法]]></title>
       <url>https://wiestlee.github.io/2017/03/13/tags-%5Bjavascript%5D-2/</url>
       <content type="html"><![CDATA[<h3 id="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"><a href="#在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。" class="headerlink" title="在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。"></a>在浏览网页时，经常看到这样一个效果，当我们点击一个链接时，会弹出一个弹窗或弹出一个模块，当点击页面空白处（不包含弹窗模块部分），弹窗会消失。</h3><p>下面是在stackoverflow上看到的，比较简单的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(document).click(function(e)&#123;</div><div class="line">  var target_area = $(&quot;目标区域&quot;);//设置目标区域</div><div class="line">  if(!target_area.is(e.target)&amp;&amp;target_area.has(e.target).length === 0)&#123;</div><div class="line">    some code....</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">/*</div><div class="line"> 原理说明：</div><div class="line"> 1、事件对象不是目标区域</div><div class="line"> 2、事件对象不是目标区域的子元素</div><div class="line">*/</div></pre></td></tr></table></figure></p>
