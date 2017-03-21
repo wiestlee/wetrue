@@ -5,7 +5,7 @@
     
     <entry>
       <title></title>
-      <url>https://wiestlee.github.io/2017/03/21/title-js%E6%95%B0%E7%BB%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+      <url>https://wiestlee.github.io/2017/03/21/tags-%E6%95%B0%E7%BB%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
       <content type="html"><![CDATA[<hr>
 <h2 id="title-js数组那些事"><a href="#title-js数组那些事" class="headerlink" title="title:js数组那些事"></a>title:js数组那些事</h2><h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">快速排序：</div><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="数组随机排序"><a href="#数组随机排序" class="headerlink" title="数组随机排序"></a>数组随机排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7,8,9,10];</div><div class="line">  		arr.sort(function()&#123;</div><div class="line">  			return Math.random() - 0.5;</div><div class="line">  		&#125;)</div><div class="line">  		console.log(arr);</div></pre></td></tr></table></figure>
@@ -17,6 +17,78 @@
 <p>内置函数：内置函数Math.max()和Math.min()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.max(1,2,5,6); //6</div><div class="line">Math.min(9,40,2,3); //2</div></pre></td></tr></table></figure></p>
 ]]></content>
       
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTML5前端性能优化-页面预加载]]></title>
+      <url>https://wiestlee.github.io/2017/03/18/HTML5%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%A2%84%E5%8A%A0%E8%BD%BD/</url>
+      <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
+<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
+<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
+</blockquote>
+<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
+<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
+<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
+<blockquote>
+<ul>
+<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
+<li>预加载那些整个网站通用的图片。</li>
+<li>预加载网站上搜索结果的下一页。</li>
+</ul>
+</blockquote>
+<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
+<blockquote>
+<ul>
+<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
+<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTML5前端性能优化-页面预加载]]></title>
+      <url>https://wiestlee.github.io/2017/03/18/tags-%20%20%5BHTML%5D-1/</url>
+      <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
+<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
+<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
+</blockquote>
+<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
+<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
+<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
+<blockquote>
+<ul>
+<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
+<li>预加载那些整个网站通用的图片。</li>
+<li>预加载网站上搜索结果的下一页。</li>
+</ul>
+</blockquote>
+<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
+<blockquote>
+<ul>
+<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
+<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
         
     </entry>
     
@@ -98,78 +170,6 @@
         <tags>
             
             <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[HTML5前端性能优化-页面预加载]]></title>
-      <url>https://wiestlee.github.io/2017/03/18/HTML5%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%A2%84%E5%8A%A0%E8%BD%BD/</url>
-      <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
-<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
-<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
-</blockquote>
-<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
-<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
-<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
-<blockquote>
-<ul>
-<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
-<li>预加载那些整个网站通用的图片。</li>
-<li>预加载网站上搜索结果的下一页。</li>
-</ul>
-</blockquote>
-<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
-<blockquote>
-<ul>
-<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
-<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> HTML </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[HTML5前端性能优化-页面预加载]]></title>
-      <url>https://wiestlee.github.io/2017/03/18/tags-%20%20%5BHTML%5D-1/</url>
-      <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
-<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
-<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
-</blockquote>
-<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
-<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
-<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
-<blockquote>
-<ul>
-<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
-<li>预加载那些整个网站通用的图片。</li>
-<li>预加载网站上搜索结果的下一页。</li>
-</ul>
-</blockquote>
-<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
-<blockquote>
-<ul>
-<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
-<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> HTML </tag>
             
         </tags>
         
