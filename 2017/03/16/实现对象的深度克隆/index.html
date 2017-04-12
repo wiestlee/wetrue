@@ -7,13 +7,15 @@
 
     
 
-    <title>javascript | 李伟振的博客</title>
+    <title>实现对象的深度clone | 李伟振的博客</title>
     <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="简单来说，有个变量a，a的值是个对象（包括基本数据类型），现在我要创建一个变量b，使它拥有跟a一样的方法和属性等等。但是a和b之间不能相互影响，即a的值不会改变b值的变化。干脆直接赋值不就行了嘛？12345678910111213var a = 1;var b = a;console.log(b);">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="实现对象的深度clone"/>
     <meta property="og:site_name" content="wiestlee&#39;s blog"/>
 
     
@@ -191,30 +193,121 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
 
         
-            <a class="breadcrumb" href="/tags/javascript/">javascript</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>实现对象的深度clone</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/实现对象的深度克隆/">2017-03-16</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/03/16/3/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-03-15T16:00:00.000Z">2017-03-16</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                JS数组哪些事
-            </a>
+            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>简单来说，有个变量a，a的值是个对象（包括基本数据类型），现在我要创建一个变量b，使它拥有跟a一样的方法和属性等等。但是a和b之间不能相互影响，即a的值不会改变b值的变化。<br>干脆直接赋值不就行了嘛？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var b = a;</div><div class="line">console.log(b);// 1</div><div class="line"></div><div class="line">var a = &apos;hello&apos;;</div><div class="line">var b = a;</div><div class="line">a = &apos;world&apos;;</div><div class="line">console.log(b); // hello</div><div class="line"></div><div class="line">var a = true;</div><div class="line">var b = a;</div><div class="line">a = false;</div><div class="line">console.log(b); // true</div></pre></td></tr></table></figure></p>
+<p>实践证明某些Javascript的原始数据类型，如果克隆直接赋值即可。</p>
+<p>关于function的深度复制：查阅了一些资料，function的深度复制和原始数类型的深度复制似乎和原始数据类型的深度复制一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = function()&#123; console.log(1); &#125;;</div><div class="line">var b = a;</div><div class="line">a = function()&#123; console.log(2); &#125;;</div><div class="line">b();// 1</div></pre></td></tr></table></figure></p>
+<p>是吗？ 思考后觉得function和普通对象一样，只是我们在平常应用中习惯了整体的重新赋值，导致它在深度复制中的表现和原始类型一致：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = function()&#123; console.log(1); &#125;;</div><div class="line">a.tmp = 10;</div><div class="line">var b = a;</div><div class="line">a.tmp = 20;</div><div class="line">console.log(b.tmp); // 20</div></pre></td></tr></table></figure></p>
+<p>于是乎对于function类型的深度克隆，直接赋值似乎并不是一种最好的方法（尽管实际应用中足矣）。那么如何克隆呢？<br>对象呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [0,1,2,3];</div><div class="line">var b = a;</div><div class="line">a.push(4);</div><div class="line">console.log(b); //[0,1,2,3,4]</div></pre></td></tr></table></figure></p>
+<p>虽然与预期不符，为什么会这样？因为原始数据类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址。上面的例子也就是说a和b对象引用了同一个地址，无论改变a还是改变b，其实根本操作是一样的，都是对那块空间地址中的的改变。<br>于是我们知道了，对于基本的对象来说，不能只能用=赋值，然后看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function deepClone(obj)&#123;</div><div class="line">   var o = obj instanceof Array ? []:&#123;&#125;;</div><div class="line">   for (var k in obj)&#123;</div><div class="line">      o[k] = typeof obj[k] === Object ? deepClone(obj[k]):obj[k];</div><div class="line">      return o;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">var a = [[1,2,3],[4,5,6,7]];</div><div class="line">var b = deepClone(a);</div><div class="line">console.log(b);</div></pre></td></tr></table></figure></p>
+<p>或者：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function DeepCopy(obj,newobj)&#123;</div><div class="line">  var newobj = newobj || &#123;&#125;;</div><div class="line">  for(var i in obj)&#123;</div><div class="line">   if(typeof obj[i]==&quot;object&quot;)&#123;</div><div class="line">     newobj[i]=(obj[i].constructor===Array)?[]:&#123;&#125;;</div><div class="line">     Deepcopy(obj[i],newobj[i]);</div><div class="line">   &#125;else&#123;</div><div class="line">      newobj[i]=obj[i];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return newobj;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>似乎可以解决一般的对象（包括Array）的深度克隆了，或许这会有个疑问，new String（…）这类的也是对象啊，可是你克隆不了啊，… 但是深度克隆的主要点不在这里，可能在于：</p>
+<blockquote>
+<ul>
+<li>原始数据类型的直接赋值</li>
+<li>function的exception</li>
+<li>对象深度克隆中Array类型的判断</li>
+<li>克隆函数的递归调用</li>
+</ul>
+</blockquote>
+
+                
+<p class="pink-link-context">
+    <a href="/2017/03/16/3/" rel="next" title="JS数组哪些事">
+    上一篇：JS数组哪些事
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2017/03/13/tags-[javascript]-2/" rel="next" title="点击页面空白处，弹窗消失的实现方法">
+    下一篇：点击页面空白处，弹窗消失的实现方法
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/03/16/实现对象的深度克隆/" data-title="实现对象的深度clone" data-url="https://wiestlee.github.io/2017/03/16/实现对象的深度克隆/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'wiestlee'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>
@@ -479,50 +572,6 @@
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
                                         match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
-                                    });
-
-                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
-                                }
-                                str += "</li>";
-                            }
-                        });
-                        str += "</ul>";
-                        $resultContent.innerHTML = str;
-                    });
-                }
-            });
-        }
-    })(jQuery);
-</script>
-
-
-<script src="/js/prettify.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("pre").addClass("prettyprint");
-        prettyPrint();
-    });
-</script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-
-</body>
-</html>
-pan>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"
