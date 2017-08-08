@@ -532,6 +532,34 @@
   
   <entry>
     <title>示例</title>
+    <link href="https://wiestlee.github.io/2016/11/05/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E9%9A%8F%E6%9C%BA%E6%95%B4%E6%95%B0/"/>
+    <id>https://wiestlee.github.io/2016/11/05/如何获取随机整数/</id>
+    <published>2016-11-04T16:00:00.000Z</published>
+    <updated>2017-08-08T08:39:50.182Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="javascript-如何获取随机整数"><a href="#javascript-如何获取随机整数" class="headerlink" title="javascript 如何获取随机整数"></a>javascript 如何获取随机整数</h2><p>咱们先看下面这个方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function (end,start)&#123;</div><div class="line"></div><div class="line">   return Math.floor(Math.random()*(end - start) + start);</div><div class="line">   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这是一个生成a到b之间的随机整数的方法;</p>
+<p>下面逐步分析一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.random();     <span class="comment">// [0,1);</span></div><div class="line"><span class="built_in">Math</span>.random()*(end-start);   <span class="comment">// [0,end-start)</span></div><div class="line"><span class="built_in">Math</span>.random()*(end-start)+start; <span class="comment">//[start,end)</span></div></pre></td></tr></table></figure></p>
+<h2 id="然后介绍将小数值舍入为整数的几个方法：Math-ceil-、Math-floor-和Math-round-。-这三个方法分别遵循下列舍入规则："><a href="#然后介绍将小数值舍入为整数的几个方法：Math-ceil-、Math-floor-和Math-round-。-这三个方法分别遵循下列舍入规则：" class="headerlink" title="然后介绍将小数值舍入为整数的几个方法：Math.ceil()、Math.floor()和Math.round()。 这三个方法分别遵循下列舍入规则："></a>然后介绍将小数值舍入为整数的几个方法：Math.ceil()、Math.floor()和Math.round()。 这三个方法分别遵循下列舍入规则：</h2><blockquote>
+<p>Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；<br>Math.floor()执行向下舍入，即它总是将数值向下舍入为最接近的整数；<br>Math.round()执行标准舍入，即它总是将数值四舍五入为最接近的整数(这也是我们在数学课上学到的舍入规则)。<br>parseInt() 仅为取整 不要浮点数部分 相当于Math.floor();</p>
+</blockquote>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Math.round(Math.random()*10); // [0,10]</div><div class="line">Math.floor(Math.random()*10); // [0,10)</div><div class="line">Math.floor(Math.random()*(10-1)+1)  //[1,10)</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;javascript-如何获取随机整数&quot;&gt;&lt;a href=&quot;#javascript-如何获取随机整数&quot; class=&quot;headerlink&quot; title=&quot;javascript 如何获取随机整数&quot;&gt;&lt;/a&gt;javascript 如何获取随机整数&lt;/h2&gt;&lt;p&gt;咱们
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://wiestlee.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>示例</title>
     <link href="https://wiestlee.github.io/2016/10/30/%E7%A4%BA%E4%BE%8B/"/>
     <id>https://wiestlee.github.io/2016/10/30/示例/</id>
     <published>2016-10-29T16:00:00.000Z</published>
