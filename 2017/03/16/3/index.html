@@ -97,7 +97,7 @@
                 
             </ul>
             <div>
-    <ul class="side-nav indigo darken-1" id="main-menu">
+    <ul class="side-nav light-blue lighten-1" id="main-menu">
         
         <li class="side-user">
             <div class="row">
@@ -165,7 +165,7 @@
         
     </ul>
 
-    <ul class="side-nav indigo darken-1" id="category-menu">
+    <ul class="side-nav light-blue lighten-1" id="category-menu">
     
 
             
@@ -194,7 +194,7 @@
     <main>
         <div class="container main-container">
     <nav class="page-nav hide-on-small-only">
-    <div class="nav-wrapper indigo">
+    <div class="nav-wrapper light-blue">
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
@@ -218,7 +218,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/3/">2017-03-16</a></time>
+            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/3/">2017-03-16</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -228,17 +228,17 @@
             
     <div class="tags-row">
         
-            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
+            <a href="/tags/javascript/" class="chip red darken-1">javascript</a>
         
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc indigo-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组排序"><span class="section table-of-contents-text">数组排序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组随机排序"><span class="section table-of-contents-text">数组随机排序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组去重复"><span class="section table-of-contents-text">数组去重复</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组取最大值最小值"><span class="section table-of-contents-text">数组取最大值最小值</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry indigo-link-context">
                 <h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">快速排序：</div><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="数组随机排序"><a href="#数组随机排序" class="headerlink" title="数组随机排序"></a>数组随机排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7,8,9,10];</div><div class="line">  		arr.sort(function()&#123;</div><div class="line">  			return Math.random() - 0.5;</div><div class="line">  		&#125;)</div><div class="line">  		console.log(arr);</div></pre></td></tr></table></figure>
 <p>解释下：Math.random()得到的是0~1之间的随机数。sort()可以调用一个函数做为参数，如果这个函数返回的值为-1表示数组中的a项排在b项前。如此一来，可以写一个随机函数，让Math.random()随机出来的数与0.5做为一个比较，如果大于.5就返回 -1(a排在b前面)，反之返回1(b排在a前面)</p>
@@ -249,17 +249,17 @@
 <p>内置函数：内置函数Math.max()和Math.min()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.max(1,2,5,6); //6</div><div class="line">Math.min(9,40,2,3); //2</div></pre></td></tr></table></figure></p>
 
                 
-<p class="pink-link-context">
-    <a href="/2017/03/18/HTML5前端性能优化页面预加载/" rel="next" title="HTML5前端性能优化-页面预加载">
-    上一篇：HTML5前端性能优化-页面预加载
+<p class="indigo-link-context">
+    <a href="/2017/03/16/实现对象的深度克隆/" rel="next" title="实现对象的深度clone">
+    上一篇：实现对象的深度clone
   </a>
 </p>
 
 
 
-<p class="pink-link-context">
-    <a href="/2017/03/16/实现对象的深度克隆/" rel="next" title="实现对象的深度clone">
-    下一篇：实现对象的深度clone
+<p class="indigo-link-context">
+    <a href="/2017/03/13/tags-[javascript]-2/" rel="next" title="点击页面空白处，弹窗消失的实现方法">
+    下一篇：点击页面空白处，弹窗消失的实现方法
   </a>
 </p>
 
@@ -305,17 +305,17 @@
 </div>
 
         <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large pink">
+    <a class="btn-floating btn-large red darken-2">
       <i class="fa fa-caret-square-o-up"></i>
     </a>
     <ul>
-      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
-      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+      <li><a class="btn-return-top btn-floating waves-effect purple" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse cyan lighten-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
     </ul>
   </div>
 
     </main>
-    <footer class="page-footer indigo darken-1">
+    <footer class="page-footer light-blue darken-1">
     
     <div class="container">
         <div class="row">
@@ -363,7 +363,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright indigo-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -462,11 +462,11 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('indigo lighten-2');
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-reading, .menu-about').append('<span class="new badge green accent-3"></span>');
             
 
             // 搜索功能
@@ -541,7 +541,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -563,7 +563,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

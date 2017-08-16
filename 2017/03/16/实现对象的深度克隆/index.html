@@ -97,7 +97,7 @@
                 
             </ul>
             <div>
-    <ul class="side-nav indigo darken-1" id="main-menu">
+    <ul class="side-nav light-blue lighten-1" id="main-menu">
         
         <li class="side-user">
             <div class="row">
@@ -165,7 +165,7 @@
         
     </ul>
 
-    <ul class="side-nav indigo darken-1" id="category-menu">
+    <ul class="side-nav light-blue lighten-1" id="category-menu">
     
 
             
@@ -194,7 +194,7 @@
     <main>
         <div class="container main-container">
     <nav class="page-nav hide-on-small-only">
-    <div class="nav-wrapper indigo">
+    <div class="nav-wrapper light-blue">
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
@@ -218,7 +218,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/实现对象的深度克隆/">2017-03-16</a></time>
+            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/实现对象的深度克隆/">2017-03-16</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -228,17 +228,17 @@
             
     <div class="tags-row">
         
-            <a href="/tags/JavaScript/" class="chip pink lighten-1">JavaScript</a>
+            <a href="/tags/JavaScript/" class="chip red darken-1">JavaScript</a>
         
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc indigo-link-context hide-on-med-and-down">
     
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry indigo-link-context">
                 <p>简单来说，有个变量a，a的值是个对象（包括基本数据类型），现在我要创建一个变量b，使它拥有跟a一样的方法和属性等等。但是a和b之间不能相互影响，即a的值不会改变b值的变化。<br>干脆直接赋值不就行了嘛？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var b = a;</div><div class="line">console.log(b);// 1</div><div class="line"></div><div class="line">var a = &apos;hello&apos;;</div><div class="line">var b = a;</div><div class="line">a = &apos;world&apos;;</div><div class="line">console.log(b); // hello</div><div class="line"></div><div class="line">var a = true;</div><div class="line">var b = a;</div><div class="line">a = false;</div><div class="line">console.log(b); // true</div></pre></td></tr></table></figure></p>
 <p>实践证明某些Javascript的原始数据类型，如果克隆直接赋值即可。</p>
 <p>关于function的深度复制：查阅了一些资料，function的深度复制和原始数类型的深度复制似乎和原始数据类型的深度复制一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = function()&#123; console.log(1); &#125;;</div><div class="line">var b = a;</div><div class="line">a = function()&#123; console.log(2); &#125;;</div><div class="line">b();// 1</div></pre></td></tr></table></figure></p>
@@ -258,17 +258,17 @@
 <p><a href="http://web.jobbole.com/82517/#article-comment" target="_blank" rel="external">分享来源</a></p>
 
                 
-<p class="pink-link-context">
-    <a href="/2017/03/16/3/" rel="next" title="JS数组哪些事">
-    上一篇：JS数组哪些事
+<p class="indigo-link-context">
+    <a href="/2017/03/18/HTML5前端性能优化页面预加载/" rel="next" title="HTML5前端性能优化-页面预加载">
+    上一篇：HTML5前端性能优化-页面预加载
   </a>
 </p>
 
 
 
-<p class="pink-link-context">
-    <a href="/2017/03/13/tags-[javascript]-2/" rel="next" title="点击页面空白处，弹窗消失的实现方法">
-    下一篇：点击页面空白处，弹窗消失的实现方法
+<p class="indigo-link-context">
+    <a href="/2017/03/16/3/" rel="next" title="JS数组哪些事">
+    下一篇：JS数组哪些事
   </a>
 </p>
 
@@ -314,17 +314,17 @@
 </div>
 
         <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large pink">
+    <a class="btn-floating btn-large red darken-2">
       <i class="fa fa-caret-square-o-up"></i>
     </a>
     <ul>
-      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
-      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+      <li><a class="btn-return-top btn-floating waves-effect purple" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse cyan lighten-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
     </ul>
   </div>
 
     </main>
-    <footer class="page-footer indigo darken-1">
+    <footer class="page-footer light-blue darken-1">
     
     <div class="container">
         <div class="row">
@@ -372,7 +372,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright indigo-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -471,11 +471,11 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('indigo lighten-2');
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-reading, .menu-about').append('<span class="new badge green accent-3"></span>');
             
 
             // 搜索功能
@@ -550,7 +550,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -572,7 +572,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"
