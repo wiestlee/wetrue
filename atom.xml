@@ -199,6 +199,48 @@
   </entry>
   
   <entry>
+    <title>HTML5前端性能优化-页面预加载</title>
+    <link href="https://wiestlee.github.io/2017/03/18/HTML5%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%A2%84%E5%8A%A0%E8%BD%BD/"/>
+    <id>https://wiestlee.github.io/2017/03/18/HTML5前端性能优化页面预加载/</id>
+    <published>2017-03-17T16:00:00.000Z</published>
+    <updated>2017-03-21T15:24:32.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
+<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
+<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
+</blockquote>
+<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
+<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
+<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
+<blockquote>
+<ul>
+<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
+<li>预加载那些整个网站通用的图片。</li>
+<li>预加载网站上搜索结果的下一页。</li>
+</ul>
+</blockquote>
+<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
+<blockquote>
+<ul>
+<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
+<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。&lt;br&gt;现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，J
+    
+    </summary>
+    
+    
+      <category term="HTML" scheme="https://wiestlee.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML全局属性</title>
     <link href="https://wiestlee.github.io/2017/03/18/tags-%20%20%5BJavaScript%5D-3/"/>
     <id>https://wiestlee.github.io/2017/03/18/tags-  [JavaScript]-3/</id>
@@ -289,76 +331,6 @@
   </entry>
   
   <entry>
-    <title>HTML5前端性能优化-页面预加载</title>
-    <link href="https://wiestlee.github.io/2017/03/18/HTML5%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%A2%84%E5%8A%A0%E8%BD%BD/"/>
-    <id>https://wiestlee.github.io/2017/03/18/HTML5前端性能优化页面预加载/</id>
-    <published>2017-03-17T16:00:00.000Z</published>
-    <updated>2017-03-21T15:24:32.212Z</updated>
-    
-    <content type="html"><![CDATA[<p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
-<h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
-<p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
-</blockquote>
-<p>简单说来就是：让浏览器预先加载用户访问当前页后极有可能访问的其他资源(页面，图片，视频等)。</p>
-<h4 id="HTML5页面资源预加载-Link-prefetch-写法"><a href="#HTML5页面资源预加载-Link-prefetch-写法" class="headerlink" title="HTML5页面资源预加载(Link prefetch)写法"></a>HTML5页面资源预加载(Link prefetch)写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 预加载整个页面 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;http://www.webhek.com/misc/3d-album/&quot; /&gt;</div><div class="line"></div><div class="line">&lt;!-- 预加载一个图片 --&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot; http://www.webhek.com/wordpress/</div><div class="line">wp-content/uploads/2014/04/b-334x193.jpg &quot; /&gt;</div></pre></td></tr></table></figure>
-<p><strong><em> HTML5页面资源预加载/预读取(Link prefetch)功能是通过Link标记实现的，将rel属性指定为“prefetch”，在href属性里指定要加载资源的地址。火狐浏览器里还提供了一种额外的属性支持： </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch alternate stylesheet&quot; </div><div class="line">title=&quot;Designed for Mozilla&quot; href=&quot;mozspecific.css&quot; /&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;2.html&quot; /&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="什么情况下应该预加载页面资源"><a href="#什么情况下应该预加载页面资源" class="headerlink" title="什么情况下应该预加载页面资源"></a>什么情况下应该预加载页面资源</h3><p>在你的页面里加载什么样的资源，什么时候加载，这完全取决于你。下面是一些建议：</p>
-<blockquote>
-<ul>
-<li>当页面有幻灯片类似的服务时，预加载/预读取接下来的1-3页和之前的1-3页。</li>
-<li>预加载那些整个网站通用的图片。</li>
-<li>预加载网站上搜索结果的下一页。</li>
-</ul>
-</blockquote>
-<h3 id="页面资源预加载-Link-prefetch-注意事项"><a href="#页面资源预加载-Link-prefetch-注意事项" class="headerlink" title="页面资源预加载(Link prefetch)注意事项"></a>页面资源预加载(Link prefetch)注意事项</h3><p>下面是一些关于页面资源预加载(Link prefetch)的注意事项：</p>
-<blockquote>
-<ul>
-<li>预加载(Link prefetch)不能跨域工作，包括跨域拉取cookies。</li>
-<li>预加载(Link prefetch)会污染你的网站访问量统计，因为有些预加载到浏览器的页面用户可能并未真正访问。</li>
-</ul>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。&lt;br&gt;现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，J
-    
-    </summary>
-    
-    
-      <category term="HTML" scheme="https://wiestlee.github.io/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS数组哪些事</title>
-    <link href="https://wiestlee.github.io/2017/03/16/3/"/>
-    <id>https://wiestlee.github.io/2017/03/16/3/</id>
-    <published>2017-03-15T16:00:00.000Z</published>
-    <updated>2017-03-21T15:39:25.538Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">快速排序：</div><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="数组随机排序"><a href="#数组随机排序" class="headerlink" title="数组随机排序"></a>数组随机排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7,8,9,10];</div><div class="line">  		arr.sort(function()&#123;</div><div class="line">  			return Math.random() - 0.5;</div><div class="line">  		&#125;)</div><div class="line">  		console.log(arr);</div></pre></td></tr></table></figure>
-<p>解释下：Math.random()得到的是0~1之间的随机数。sort()可以调用一个函数做为参数，如果这个函数返回的值为-1表示数组中的a项排在b项前。如此一来，可以写一个随机函数，让Math.random()随机出来的数与0.5做为一个比较，如果大于.5就返回 -1(a排在b前面)，反之返回1(b排在a前面)</p>
-<h3 id="数组去重复"><a href="#数组去重复" class="headerlink" title="数组去重复"></a>数组去重复</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第一种：</div><div class="line">var arr = [1,1,2,3,3,4,5,6,5];</div><div class="line">function noRepeat(arr)&#123;</div><div class="line">    var n = [];</div><div class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">        if(n.indexOf(arr[i])==-1)&#123;</div><div class="line">            n.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">    &#125;</div><div class="line">     console.log(n);</div><div class="line">&#125;</div><div class="line">noRepeat(arr);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第二种：</div><div class="line">var arr = [1,2,&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;];</div><div class="line">Array.prototype.noRepeat =function()&#123;</div><div class="line">    this.sort();</div><div class="line">    var res = [];</div><div class="line">    for(var i=0;i&lt;this.length;i++)&#123;</div><div class="line">      if(this[i]!==res[res.length-1])&#123;</div><div class="line">        res.push(this[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">        console.log(res);</div><div class="line">&#125;</div><div class="line">arr.noRepeat();</div></pre></td></tr></table></figure>
-<h3 id="数组取最大值最小值"><a href="#数组取最大值最小值" class="headerlink" title="数组取最大值最小值"></a>数组取最大值最小值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">取最大值：</div><div class="line">Array.prototype.max = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &gt; max) &#123; </div><div class="line">           max = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return max; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.max();</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">去最小值：</div><div class="line">Array.prototype.min = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &lt; min) &#123; </div><div class="line">           min = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return min; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.mii();</div></pre></td></tr></table></figure>
-<p>内置函数：内置函数Math.max()和Math.min()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.max(1,2,5,6); //6</div><div class="line">Math.min(9,40,2,3); //2</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;数组排序&quot;&gt;&lt;a href=&quot;#数组排序&quot; class=&quot;headerlink&quot; title=&quot;数组排序&quot;&gt;&lt;/a&gt;数组排序&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://wiestlee.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>实现对象的深度clone</title>
     <link href="https://wiestlee.github.io/2017/03/16/%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86/"/>
     <id>https://wiestlee.github.io/2017/03/16/实现对象的深度克隆/</id>
@@ -392,6 +364,34 @@
     
     
       <category term="JavaScript" scheme="https://wiestlee.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS数组哪些事</title>
+    <link href="https://wiestlee.github.io/2017/03/16/3/"/>
+    <id>https://wiestlee.github.io/2017/03/16/3/</id>
+    <published>2017-03-15T16:00:00.000Z</published>
+    <updated>2017-03-21T15:39:25.538Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">快速排序：</div><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="数组随机排序"><a href="#数组随机排序" class="headerlink" title="数组随机排序"></a>数组随机排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7,8,9,10];</div><div class="line">  		arr.sort(function()&#123;</div><div class="line">  			return Math.random() - 0.5;</div><div class="line">  		&#125;)</div><div class="line">  		console.log(arr);</div></pre></td></tr></table></figure>
+<p>解释下：Math.random()得到的是0~1之间的随机数。sort()可以调用一个函数做为参数，如果这个函数返回的值为-1表示数组中的a项排在b项前。如此一来，可以写一个随机函数，让Math.random()随机出来的数与0.5做为一个比较，如果大于.5就返回 -1(a排在b前面)，反之返回1(b排在a前面)</p>
+<h3 id="数组去重复"><a href="#数组去重复" class="headerlink" title="数组去重复"></a>数组去重复</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第一种：</div><div class="line">var arr = [1,1,2,3,3,4,5,6,5];</div><div class="line">function noRepeat(arr)&#123;</div><div class="line">    var n = [];</div><div class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">        if(n.indexOf(arr[i])==-1)&#123;</div><div class="line">            n.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">    &#125;</div><div class="line">     console.log(n);</div><div class="line">&#125;</div><div class="line">noRepeat(arr);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第二种：</div><div class="line">var arr = [1,2,&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;];</div><div class="line">Array.prototype.noRepeat =function()&#123;</div><div class="line">    this.sort();</div><div class="line">    var res = [];</div><div class="line">    for(var i=0;i&lt;this.length;i++)&#123;</div><div class="line">      if(this[i]!==res[res.length-1])&#123;</div><div class="line">        res.push(this[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">        console.log(res);</div><div class="line">&#125;</div><div class="line">arr.noRepeat();</div></pre></td></tr></table></figure>
+<h3 id="数组取最大值最小值"><a href="#数组取最大值最小值" class="headerlink" title="数组取最大值最小值"></a>数组取最大值最小值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">取最大值：</div><div class="line">Array.prototype.max = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &gt; max) &#123; </div><div class="line">           max = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return max; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.max();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">去最小值：</div><div class="line">Array.prototype.min = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &lt; min) &#123; </div><div class="line">           min = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return min; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.mii();</div></pre></td></tr></table></figure>
+<p>内置函数：内置函数Math.max()和Math.min()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.max(1,2,5,6); //6</div><div class="line">Math.min(9,40,2,3); //2</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;数组排序&quot;&gt;&lt;a href=&quot;#数组排序&quot; class=&quot;headerlink&quot; title=&quot;数组排序&quot;&gt;&lt;/a&gt;数组排序&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://wiestlee.github.io/tags/javascript/"/>
     
   </entry>
   
