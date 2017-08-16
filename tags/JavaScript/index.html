@@ -7,7 +7,7 @@
 
     
 
-    <title>JavaScript | 李伟振的博客</title>
+    <title>javascript | 李伟振的博客</title>
     <meta name="author" content="Wiestlee">
     
     
@@ -100,11 +100,11 @@
         <li class="side-user">
             <div class="row">
                 <div class="col s4 no-padding">
-                    <img class="avatar-image circle responsive-img" src="http://tvax1.sinaimg.cn/crop.0.0.996.996.180/a26415e9ly8ffcy4xt1onj20ro0rotfj.jpg" alt="User Avatar">
+                    <img class="avatar-image circle responsive-img" src="http://5b0988e595225.cdn.sohucs.com/images/20170629/8d0d24b252f543c385fe4e6207c3a6df.png" alt="User Avatar">
                 </div>
                 <div class="info col s8 valign-wrapper no-padding">
                     <div class="valign">
-                        <p class="name">李伟振</p>
+                        <p class="name">Liweizhen</p>
                         <p class="desc">Web前端&lt;/&gt;</p>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
         
 
         
-            <a class="breadcrumb" href="/tags/JavaScript/">JavaScript</a>
+            <a class="breadcrumb" href="/tags/javascript/">javascript</a>
         
     </div>
 </nav>
@@ -208,46 +208,10 @@
 
     <div class="collection mt-0">
         
-            <a href="/2017/03/18/tags-  [JavaScript]-3/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-03-17T16:00:00.000Z">2017-03-18</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                HTML全局属性
-            </a>
-        
-            <a href="/2017/03/16/实现对象的深度克隆/" class="collection-item grey-text text-darken-1">
+            <a href="/2017/03/16/3/" class="collection-item grey-text text-darken-1">
                 <time datetime="2017-03-15T16:00:00.000Z">2017-03-16</time>
                 <span>&nbsp;&nbsp;&nbsp;</span>
-                实现对象的深度clone
-            </a>
-        
-            <a href="/2017/03/13/tags-[javascript]-2/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-03-12T16:00:00.000Z">2017-03-13</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                点击页面空白处，弹窗消失的实现方法
-            </a>
-        
-            <a href="/2017/03/12/tags-  [JavaScript]/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-03-12T15:01:26.010Z">2017-03-12</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                js中如何获取多个返回值
-            </a>
-        
-            <a href="/2016/11/05/如何获取随机整数/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-11-04T16:00:00.000Z">2016-11-05</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                javascript获取随机整数
-            </a>
-        
-            <a href="/2016/10/30/示例/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-10-29T16:00:00.000Z">2016-10-30</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                示例
-            </a>
-        
-            <a href="/2016/10/23/时间戳与日期的互相转换/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-10-22T16:00:00.000Z">2016-10-23</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                时间戳与日期的互相转换
+                JS数组哪些事
             </a>
         
     </div>
@@ -304,7 +268,7 @@
             <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
-                    <a class="social-link" href="https://wiestlee.github.io/" target="_blank">李伟振的技术博客</a>
+                    <a class="social-link" href="https://wiestlee.github.io/" target="_blank">wiestlee</a>
                 
                     <a class="social-link" href="https://github.com/wiestlee" target="_blank">Github地址（测试友情链接）</a>
                 
@@ -507,6 +471,58 @@
                                     if (start == 0) {
                                         end = 100;
                                     }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
+       }
                                     if (end > content.length) {
                                         end = content.length;
                                     }

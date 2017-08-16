@@ -7,15 +7,13 @@
 
     
 
-    <title>JS数组哪些事 | 李伟振的博客</title>
+    <title>React | 李伟振的博客</title>
     <meta name="author" content="Wiestlee">
-    
-    <meta name="description" content="数组排序12345678910111213141516快速排序：var quickSort = function(arr) &amp;#123;　　if (arr.length &amp;lt;= 1) &amp;#123; return arr; &amp;#125;　　var pivotIndex = Math.floor(a">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="JS数组哪些事"/>
+    
     <meta property="og:site_name" content="wiestlee&#39;s blog"/>
 
     
@@ -193,113 +191,30 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-
+        <span class="breadcrumb">当前位置（标签）</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/React/">React</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>JS数组哪些事</h1>
-    
 
 
-            </div>
-            <time class="pink-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/3/">2017-03-16</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
+            <a href="/2017/03/05/flux架构学习/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-03-04T16:00:00.000Z">2017-03-05</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                React-native flux（alt）架构学习
+            </a>
         
     </div>
-
-
-            <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组排序"><span class="section table-of-contents-text">数组排序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组随机排序"><span class="section table-of-contents-text">数组随机排序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组去重复"><span class="section table-of-contents-text">数组去重复</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#数组取最大值最小值"><span class="section table-of-contents-text">数组取最大值最小值</span></a></li></ol>
-</div>
-
-
-            <div class="entry pink-link-context">
-                <h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">快速排序：</div><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="数组随机排序"><a href="#数组随机排序" class="headerlink" title="数组随机排序"></a>数组随机排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7,8,9,10];</div><div class="line">  		arr.sort(function()&#123;</div><div class="line">  			return Math.random() - 0.5;</div><div class="line">  		&#125;)</div><div class="line">  		console.log(arr);</div></pre></td></tr></table></figure>
-<p>解释下：Math.random()得到的是0~1之间的随机数。sort()可以调用一个函数做为参数，如果这个函数返回的值为-1表示数组中的a项排在b项前。如此一来，可以写一个随机函数，让Math.random()随机出来的数与0.5做为一个比较，如果大于.5就返回 -1(a排在b前面)，反之返回1(b排在a前面)</p>
-<h3 id="数组去重复"><a href="#数组去重复" class="headerlink" title="数组去重复"></a>数组去重复</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第一种：</div><div class="line">var arr = [1,1,2,3,3,4,5,6,5];</div><div class="line">function noRepeat(arr)&#123;</div><div class="line">    var n = [];</div><div class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">        if(n.indexOf(arr[i])==-1)&#123;</div><div class="line">            n.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">    &#125;</div><div class="line">     console.log(n);</div><div class="line">&#125;</div><div class="line">noRepeat(arr);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">第二种：</div><div class="line">var arr = [1,2,&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;];</div><div class="line">Array.prototype.noRepeat =function()&#123;</div><div class="line">    this.sort();</div><div class="line">    var res = [];</div><div class="line">    for(var i=0;i&lt;this.length;i++)&#123;</div><div class="line">      if(this[i]!==res[res.length-1])&#123;</div><div class="line">        res.push(this[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">        console.log(res);</div><div class="line">&#125;</div><div class="line">arr.noRepeat();</div></pre></td></tr></table></figure>
-<h3 id="数组取最大值最小值"><a href="#数组取最大值最小值" class="headerlink" title="数组取最大值最小值"></a>数组取最大值最小值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">取最大值：</div><div class="line">Array.prototype.max = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &gt; max) &#123; </div><div class="line">           max = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return max; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.max();</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">去最小值：</div><div class="line">Array.prototype.min = function ()&#123; </div><div class="line">  var max = this[0]; </div><div class="line">  this.forEach (function(ele,index,arr)&#123; </div><div class="line">       if(ele &lt; min) &#123; </div><div class="line">           min = ele; </div><div class="line">         &#125; </div><div class="line">    &#125;) </div><div class="line">    return min; </div><div class="line">&#125; </div><div class="line">var arr = [1,45,23,3,6,2,7,234,56]; </div><div class="line">arr.mii();</div></pre></td></tr></table></figure>
-<p>内置函数：内置函数Math.max()和Math.min()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.max(1,2,5,6); //6</div><div class="line">Math.min(9,40,2,3); //2</div></pre></td></tr></table></figure></p>
-
-                
-<p class="pink-link-context">
-    <a href="/2017/03/18/HTML5前端性能优化页面预加载/" rel="next" title="HTML5前端性能优化-页面预加载">
-    上一篇：HTML5前端性能优化-页面预加载
-  </a>
-</p>
-
-
-
-<p class="pink-link-context">
-    <a href="/2017/03/16/实现对象的深度克隆/" rel="next" title="实现对象的深度clone">
-    下一篇：实现对象的深度clone
-  </a>
-</p>
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-
-    <section id="comment">
-        <div class="card">
-            <div class="card-content">
-                <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2017/03/16/3/" data-title="JS数组哪些事" data-url="https://wiestlee.github.io/2017/03/16/3/"></div>
-
-                <script type="text/javascript">
-                    console.log(document.querySelector('.ds-thread'));
-                    var duoshuoQuery = {
-                        short_name: 'wiestlee'
-                    };
-                    (function() {
-                        var ds = document.createElement('script');
-                        ds.type = 'text/javascript';
-                        ds.async = true;
-                        ds.src = (document.location.protocol == 'https:'
-                            ? 'https:'
-                            : 'http:') + '//static.duoshuo.com/embed.js';
-                        ds.charset = 'UTF-8';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                    })();
-                </script>
-                <!-- Duoshuo Comment END -->
-            </div>
-        </div>
-    </section>
-
 
 
 </div>
