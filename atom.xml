@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wiestlee.github.io/"/>
-  <updated>2017-08-16T08:01:42.314Z</updated>
+  <updated>2017-08-26T08:28:43.840Z</updated>
   <id>https://wiestlee.github.io/</id>
   
   <author>
@@ -14,6 +14,157 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>了解Node.js</title>
+    <link href="https://wiestlee.github.io/2017/06/25/%E4%BA%86%E8%A7%A3nodejs/"/>
+    <id>https://wiestlee.github.io/2017/06/25/了解nodejs/</id>
+    <published>2017-06-24T16:00:00.000Z</published>
+    <updated>2017-08-26T08:28:43.840Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是node-js"><a href="#什么是node-js" class="headerlink" title="什么是node.js"></a>什么是node.js</h3><p>node.js是一个用C++语言编写而成，是一个Javascript的运行环境。它支持的系统包括（linux，Windows），这意味着你可以编写系统级或者服务器端的Javascript代码，交给Node.js来解释执行。<br>官网的描述：Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</p>
+<h3 id="node-js与javascript的区别"><a href="#node-js与javascript的区别" class="headerlink" title="node.js与javascript的区别"></a>node.js与javascript的区别</h3><blockquote>
+<p>一个是基于浏览器端的javascript（前端js）<br>一个是基于服务器端的javascript（后端Node.js）<br>相同点：语法一样<br>不同点：组成不一样</p>
+</blockquote>
+<p><strong>Javascript：</strong></p>
+<blockquote>
+<p>ECMAScript(语言基础，如：语法、数据类型结构以及一些内置对象)<br>DOM(一些操作页面元素的方法)<br>BOM(一些操作浏览器的方法)</p>
+</blockquote>
+<p><strong>Node.js</strong></p>
+<blockquote>
+<p>ECMAScript(语言基础，如:语法、数据类型结构以及一些内置对象)<br>OS(操作系统)<br>file(文件系统)<br>net(网络系统)<br>database(数据库)</p>
+</blockquote>
+<h3 id="node-js的优缺点"><a href="#node-js的优缺点" class="headerlink" title="node.js的优缺点"></a>node.js的优缺点</h3><p> <strong>优点：</strong></p>
+<blockquote>
+<p> 1、采用事件驱动、异步编程、为网络服务而设计<br>   node.js有非阻塞，事件驱动I/O等特性，从而让高并发（high concurrency）在的轮询（Polling）和comet构建的应用中成为可能。</p>
+<p>2、node.js非阻塞模式的IO处理给node.js而带来的相对较低的资源耗用下的高性能与出众的负载能力</p>
+<p>3、node.js轻量高效、可以认为是数据密集型的实时应用系统的完美解决方案。</p>
+<p>4、js语言适合前端工程师上手。</p>
+<p>5、社区活跃发展速度快</p>
+</blockquote>
+<p> <strong> 缺点：</strong></p>
+<blockquote>
+<p>1、单线程、单进程、只支持单核的cpu、不能充分的利用多核CPU服务器</p>
+<p>2、对程序要求高一些一旦进程崩溃、那么整个的web服务器就崩溃了</p>
+<p>3、不适合做复杂性很高的计算</p>
+<h3 id="解释非阻塞和事件驱动"><a href="#解释非阻塞和事件驱动" class="headerlink" title="解释非阻塞和事件驱动"></a>解释非阻塞和事件驱动</h3><ul>
+<li>浏览器给网站发请求的过程一直没怎么变过。当浏览器给网站发了请求。服务器收到了请求，然后开始搜寻被请求的资源。如果有需要，服务器还会查询一下数据库，最后把响应结果传回浏览器。不过，在传统的web服务器中（比如Apache），每一个请求都会让服务器创建一个新的进程来处理这个请求。</li>
+<li>后来有了Ajax。有了Ajax，我们就不用每次都请求一个完整的新页面了，取而代之的是，每次只请求需要的部分页面信息就可以了。这显然是一个进步。但是比如你要建一个FriendFeed这样的社交网站（类似人人网那样的刷朋友新鲜事的网站），你的好友会随时的推送新的状态，然后你的新鲜事会实时自动刷新。要达成这个需求，我们需要让用户一直与服务器保持一个有效连接。目前最简单的实现方法，就是让用户和服务器之间保持长轮询（long polling）。</li>
+<li>HTTP请求不是持续的连接，你请求一次，服务器响应一次，然后就完了。长轮训是一种利用HTTP模拟持续连接的技巧。具体来说，只要页面载入了，不管你需不需要服务器给你响应信息，你都会给服务器发一个Ajax请求。这个请求不同于一般的Ajax请求，服务器不会直接给你返回信息，而是它要等着，直到服务器觉得该给你发信息了，它才会响应。比如，你的好友发了一条新鲜事，服务器就会把这个新鲜事当做响应发给你的浏览器，然后你的浏览器就刷新页面了。浏览器收到响应刷新完之后，再发送一条新的请求给服务器，这个请求依然不会立即被响应。于是就开始重复以上步骤。利用这个方法，可以让浏览器始终保持等待响应的状态。虽然以上过程依然只有非持续的Http参与，但是我们模拟出了一个看似持续的连接状态。</li>
+<li>我们再看传统的服务器（比如Apache）。每次一个新用户连到你的网站上，你的服务器就得开一个连接。每个连接都需要占一个进程，这些进程大部分时间都是闲着的（比如等着你好友发新鲜事，等好友发完才给用户响应信息。或者等着数据库返回查询结果什么的）。虽然这些进程闲着，但是照样占用内存。这意味着，如果用户连接数的增长到一定规模，你服务器没准就要耗光内存直接瘫了。<br>这种情况怎么解决？解决方法就是刚才上边说的：非阻塞和事件驱动。这些概念在我们谈的这个情景里面其实没那么难理解。你把非阻塞的服务器想象成一个loop循环，这个loop会一直跑下去。一个新请求来了，这个loop就接了这个请求，把这个请求传给其他的进程（比如传给一个搞数据库查询的进程），然后响应一个回调（callback）。完事了这loop就接着跑，接其他的请求。这样下来。服务器就不会像之前那样傻等着数据库返回结果了。</li>
+<li>如果数据库把结果返回来了，loop就把结果传回用户的浏览器，接着继续跑。在这种方式下，你的服务器的进程就不会闲着等着。从而在理论上说，同一时刻的数据库查询数量，以及用户的请求数量就没有限制了。服务器只在用户那边有事件发生的时候才响应，这就是事件驱动。</li>
+<li>FriendFeed是用基于Python的非阻塞框架Tornado (知乎也用了这个框架) 来实现上面说的新鲜事功能的。不过，Node.js就比前者更妙了。Node.js的应用是通过javascript开发的，然后直接在Google的变态V8引擎上跑。用了Node.js，你就不用担心用户端的请求会在服务器里跑了一段能够造成阻塞的代码了。因为javascript本身就是事件驱动的脚本语言。你回想一下，在给前端写javascript的时候，更多时候你都是在搞事件处理和回调函数。javascript本身就是给事件处理量身定制的语言。<br>Node.js还是处于初期阶段。如果你想开发一个基于Node.js的应用，你应该会需要写一些很底层代码。但是下一代浏览器很快就要采用WebSocket技术了，从而长轮询也会消失。在Web开发里，Node.js这种类型的技术只会变得越来越重要。</li>
+</ul>
+</blockquote>
+<p><strong><a href="http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank" rel="external">解释：线程与进程</a></strong>（来源：阮一峰）</p>
+<h3 id="node-js-的十五个应用场景-文章来源-DevStore"><a href="#node-js-的十五个应用场景-文章来源-DevStore" class="headerlink" title="node.js 的十五个应用场景(文章来源:DevStore)"></a>node.js 的十五个应用场景(文章来源:<a href="http://www.devstore.cn/essay/essayInfo/2199.html" target="_blank" rel="external">DevStore</a>)</h3><blockquote>
+<ul>
+<li>1、Web开发：Express + EJS + Mongoose/MySQL</li>
+</ul>
+</blockquote>
+<p>express 是轻量灵活的Nodejs Web应用框架，它可以快速地搭建网站。Express框架建立在Nodejs内置的Http模块上，并对Http模块再包装，从而实际Web请求处理的功能。</p>
+<p>ejs是一个嵌入的Javascript模板引擎，通过编译生成HTML的代码。</p>
+<p>mongoose 是MongoDB的对象模型工具，通过Mongoose框架，可以进行访问MongoDB的操作。</p>
+<p>mysql 是连接MySQL数据库的通信API，可以进行访问MySQL的操作。</p>
+<p>通常用Nodejs做Web开发，需要3个框架配合使用，就像Java中的SSH。</p>
+<blockquote>
+<ul>
+<li>2、REST开发：Restify</li>
+</ul>
+</blockquote>
+<p>restify 是一个基于Nodejs的REST应用框架，支持服务器端和客户端。restify比起express更专注于REST服务，去掉了express中的template, render等功能，同时强化了REST协议使用，版本化支持，HTTP的异常处理。</p>
+<blockquote>
+<ul>
+<li>3、Web聊天室(IM)：Express + Socket.io</li>
+</ul>
+</blockquote>
+<p>socket.io一个是基于Nodejs架构体系的，支持websocket的协议用于时时通信的一个软件包。socket.io 给跨浏览器构建实时应用提供了完整的封装，socket.io完全由javascript实现。</p>
+<blockquote>
+<ul>
+<li>4、Web爬虫：Cheerio/Request</li>
+</ul>
+</blockquote>
+<p>cheerio 是一个为服务器特别定制的，快速、灵活、封装jQuery核心功能工具包。Cheerio包括了 jQuery核心的子集，从jQuery库中去除了所有DOM不一致性和浏览器不兼容的部分，揭示了它真正优雅的API。Cheerio工作在一个非常简 单，一致的DOM模型之上，解析、操作、渲染都变得难以置信的高效。基础的端到端的基准测试显示Cheerio大约比JSDOM快八倍(8x)。 Cheerio封装了@FB55兼容的htmlparser，几乎能够解析任何的 HTML 和 XML document。</p>
+<blockquote>
+<ul>
+<li>5、 Web博客：Hexo</li>
+</ul>
+</blockquote>
+<p>Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。</p>
+<p>发布时，Hexo可以部署在自己的Node服务器上面，也可以部署github上面。对于个人用户来说，部署在github上好处颇多，不仅可以省 去服务器的成本，还可以减少各种系统运维的麻烦事(系统管理、备份、网络)。所以，基于github的个人站点，正在开始流行起来….</p>
+<blockquote>
+<ul>
+<li>6、Web论坛: nodeclub</li>
+</ul>
+</blockquote>
+<p>Node Club 是用 Node.js 和 MongoDB 开发的新型社区软件，界面优雅，功能丰富，小巧迅速， 已在Node.js 中文技术社区 CNode 得到应用，但你完全可以用它搭建自己的社区。</p>
+<blockquote>
+<ul>
+<li>7、 Web幻灯片：Cleaver</li>
+</ul>
+</blockquote>
+<p>Cleaver 可以生成基于Markdown的演示文稿。如果你已经有了一个Markdown的文档，30秒就可以制作成幻灯片。Cleaver是为Hacker准备的工具。</p>
+<blockquote>
+<ul>
+<li>8、前端包管理平台: bower.js</li>
+</ul>
+</blockquote>
+<p>Bower 是 twitter 推出的一款包管理工具，基于nodejs的模块化思想，把功能分散到各个模块中，让模块和模块之间存在联系，通过 Bower 来管理模块间的这种联系。</p>
+<blockquote>
+<ul>
+<li>9、 OAuth认证：Passport</li>
+</ul>
+</blockquote>
+<p>Passport项 目是一个基于Nodejs的认证中间件。Passport目的只是为了“登陆认证”，因此，代码干净，易维护，可以方便地集成到其他的应用中。Web应用 一般有2种登陆认证的形式：用户名和密码认证登陆,OAuth认证登陆。Passport可以根据应用程序的特点，配置不同的认证机制。本文将介绍，用户 名和密码的认证登陆。</p>
+<blockquote>
+<ul>
+<li>10、 定时任务工具: later</li>
+</ul>
+</blockquote>
+<p>Later 是一个基于Nodejs的工具库，用最简单的方式执行定时任务。Later可以运行在Node和浏览器中。</p>
+<blockquote>
+<ul>
+<li>11、 浏览器环境工具: browserify</li>
+</ul>
+</blockquote>
+<p>Browserify 的出现可以让Nodejs模块跑在浏览器中，用require()的语法格式来组织前端的代码，加载npm的模块。在浏览器中，调用browserify编译后的代码，同样写在<script>标签中。</p>
+<p>用 Browserify 的操作，分为3个步骤。1. 写node程序或者模块, 2. 用Browserify 预编译成 bundle.js, 3. 在HTML页面中加载bundle.js。</p>
+<blockquote>
+<ul>
+<li>12、 命令行编程工具：Commander</li>
+</ul>
+</blockquote>
+<p>commander 是一个轻巧的nodejs模块，提供了用户命令行输入和参数解析强大功能。commander源自一个同名的Ruby项目。commander的特性：自 记录代码,自动生成帮助,合并短参数（“ABC”==“-A-B-C”）,默认选项,强制选项,命令解析,提示符。</p>
+<blockquote>
+<ul>
+<li>13、 Web控制台工具: tty.js</li>
+</ul>
+</blockquote>
+<p>tty.js 是一个支持在浏览器中运行的命令行窗口，基于node.js平台，依赖socket.io库，通过websocket与Linux系统通信。特性：支持多 tab窗口模型; 支持vim,mc,irssi,vifm语法; 支持xterm鼠标事件; 支持265色显示; 支持session。</p>
+<blockquote>
+<ul>
+<li>14、 客户端应用工具: node-webwit</li>
+</ul>
+</blockquote>
+<p>Node-Webkit 是NodeJS与WebKit技术的融合，提供一个跨Windows、Linux平台的客户端应用开发的底层框架，利用流行的Web技术 （Node.JS，JavaScript，HTML5）来编写应用程序的平台。应用程序开发人员可以轻松的利用Web技术来实现各种应用程序。Node- Webkit性能和特色已经让它成为当今世界领先的Web技术应用程序平台。</p>
+<blockquote>
+<ul>
+<li>15、 操作系统: node-os</li>
+</ul>
+</blockquote>
+<p>NodeOS 是采用NodeJS开发的一款友好的操作系统，该操作系统是完全建立在Linux内核之上的，并且采用shell和NPM进行包管理，采用NodeJS不 仅可以很好地进行包管理，还可以很好的管理脚本、接口等。目前，Docker和Vagrant都是采用NodeOS的首个版本进行构建的.</p>
+</script></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是node-js&quot;&gt;&lt;a href=&quot;#什么是node-js&quot; class=&quot;headerlink&quot; title=&quot;什么是node.js&quot;&gt;&lt;/a&gt;什么是node.js&lt;/h3&gt;&lt;p&gt;node.js是一个用C++语言编写而成，是一个Javascript的运行环
+    
+    </summary>
+    
+    
+      <category term="Node.j" scheme="https://wiestlee.github.io/tags/Node-j/"/>
+    
+  </entry>
   
   <entry>
     <title>React-native flux（alt）架构学习</title>
