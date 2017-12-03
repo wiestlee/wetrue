@@ -11,8 +11,7 @@
     <meta name="author" content="Wiestlee">
     
     <meta name="description" content="本章涉及3个知识点，var、let、const，现在让我们了解3个关键字的特性和使用方法。
-varJavaScript中，我们通常说的作用域是函数作用域，使用var声明的变量，无论是在代码的哪个地方声明的，都会提升到当前作用域的最顶部，这种行为叫做变量提升（Hoisting）
-也就是说，如果在函数内">
+varJavaScript中，我们通常说的作用域是函数作用域，使用var声明的变量，无论是在代码的哪个地方声明的，都会提升到当前作用域的最顶部，这种行为叫做变量提升（Hoisting）">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -261,6 +260,7 @@ varJavaScript中，我们通常说的作用域是函数作用域，使用var声�
             <div class="entry indigo-link-context">
                 <p><strong>本章涉及3个知识点，var、let、const，现在让我们了解3个关键字的特性和使用方法。</strong></p>
 <h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>JavaScript中，我们通常说的作用域是函数作用域，使用var声明的变量，无论是在代码的哪个地方声明的，都会提升到当前作用域的最顶部，这种行为叫做<strong>变量提升（Hoisting）</strong></p>
+<a id="more"></a>
 <p>也就是说，如果在函数内部声明的变量，都会被提升到该函数开头，而在全局声明的变量，就会提升到全局作用域的顶部。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1: '</span>, a) <span class="comment">//undefined</span></div><div class="line">    <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</div><div class="line">      <span class="keyword">var</span> a = <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'3: '</span>, a) <span class="comment">//undefined</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">test()</div></pre></td></tr></table></figure>
 <p>实际执行时，上面的代码中的变量a会提升到函数顶部声明，即使if语句的条件是false，也一样不影响a变量提升。</p>
