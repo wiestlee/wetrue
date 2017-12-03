@@ -10,7 +10,7 @@
     <title>HTML5前端性能优化-页面预加载 | wiestlee&#39;s home</title>
     <meta name="author" content="Wiestlee">
     
-    <meta name="description" content="当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN">
+    <meta name="description" content="当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -240,6 +240,7 @@
 
             <div class="entry indigo-link-context">
                 <p>当提到前端性能优化时，我们首先会联想到文件的合并、压缩，文件缓存和开启服务器端的 gzip压缩等，这使得页面加载更快。<br>现在，有很多已知的技术都可以让你的网站速度变得更快：使用CSS sprites，使用图片优化工具，使用.htaccess设置页面头信息和缓存时间，JavaScript压缩，使用CDN等。而在HTML5里，出现了一个新的用来优化网站速度的新功能：页面资源预加载/预读取(Link prefetch)。</p>
+<a id="more"></a>
 <h3 id="什么是资源预加载："><a href="#什么是资源预加载：" class="headerlink" title="什么是资源预加载："></a>什么是资源预加载：</h3><blockquote>
 <p>预加载是浏览器对将来可能被使用资源的一种暗示，一些资源可以在当前页面使用到，一些可能在将来的某些页面中被使用。作为开发人员，我们比浏览器更加了解我们的应用，所以我们可以对我们的核心资源使用该技术。</p>
 </blockquote>

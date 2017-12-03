@@ -11,7 +11,7 @@
     <meta name="author" content="Wiestlee">
     
     <meta name="description" content="Vue.js简介Vue.js是一款轻量级的以数据驱动的前端JS框架，其和JQuery最大的不同点在于JQuery通过操作DOM来改变页面的显示，而Vue通过操作数据来实现页面的更新与展示。
-Vue.js主要负责的是ViewModel的部分，其在View层（即DOM层）与Model层（即JSl逻辑层）">
+Vue.js主要负责的是ViewModel的部分，其在View层（即DOM层）与Model层（即JSl逻辑层）之间通过ViewModel绑定了DOM Listeners与Data Bingings两个相当于监听器的东西。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -241,7 +241,7 @@ Vue.js主要负责的是ViewModel的部分，其在View层（即DOM层）与Mode
 
             <div class="entry indigo-link-context">
                 <h3 id="Vue-js简介"><a href="#Vue-js简介" class="headerlink" title="Vue.js简介"></a>Vue.js简介</h3><p>Vue.js是一款轻量级的以数据驱动的前端JS框架，其和JQuery最大的不同点在于JQuery通过操作DOM来改变页面的显示，而Vue通过操作数据来实现页面的更新与展示。</p>
-<p>Vue.js主要负责的是ViewModel的部分，其在View层（即DOM层）与Model层（即JSl逻辑层）之间通过ViewModel绑定了DOM Listeners与Data Bingings两个相当于监听器的东西。</p>
+<p>Vue.js主要负责的是ViewModel的部分，其在View层（即DOM层）与Model层（即JSl逻辑层）之间通过ViewModel绑定了DOM Listeners与Data Bingings两个相当于监听器的东西。<br><a id="more"></a></p>
 <p>当View层的视图发生改变时，Vue会通过DOM Listeners来监听并改变Model层的数据。相反，当Model层的数据发生改变时，其也会通过Data Bingings来监听并改变View层的展示。这样便实现了一个双向数据绑定的功能，也是Vue.js数据驱动的原理所在。</p>
 <h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">    el:&apos;#demo&apos;,</div><div class="line">    data:&#123;</div><div class="line">        a:1,</div><div class="line">        b:2</div><div class="line">    &#125;,</div><div class="line">    created:function()&#123;</div><div class="line">       //this 指向 vm 实例</div><div class="line">       console.log(&apos;a is&apos;+this.a)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>在一个html文件中，我们直接可以通过script标签引入Vue.js，然后就可以在页面里写Vue.js代码了。上图中我们通过new Vue()构建了一个Vue的实例，在实例中，可以包含挂在元素（el），数据（data），模板（template），方法（methods）与生命周期钩子（created等）等选项。不同的实例选项拥有不同的功能，如：</p>

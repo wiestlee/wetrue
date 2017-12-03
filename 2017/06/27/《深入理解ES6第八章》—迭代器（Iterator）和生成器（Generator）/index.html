@@ -12,8 +12,7 @@
     
     <meta name="description" content="迭代器（Iterator）ES5实现迭代器迭代器是什么？遇到这种新的概念，莫慌张。
 迭代器是一种特殊对象，每一个迭代器对象都有一个next()，该方法返回一个对象，包括value和done属性。
-ES5实现迭代器的代码如下：
-123456789101112131415161718192021//实现">
+ES5实现迭代器的代码如下：">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -212,6 +211,24 @@ ES5实现迭代器的代码如下：
     <div class="card">
         <div class="card-content">
             
+                <div class="gallery carousel carousel-slider">
+    
+      
+        <span class="carousel-item"><img class="carousel-image" src="http://upload-images.jianshu.io/upload_images/1504317-805392e6d4ad6f43.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></span>
+      
+    
+  <div class="control">
+    <div class="carousel-control prev">
+        <i class="fa fa-left"></i>
+
+    </div>
+    <div class="carousel-control next">
+        <i class="fa fa-right"></i>
+    </div>
+  </div>
+</div>
+
+            
 
             <div class="article-title">
                 
@@ -245,6 +262,7 @@ ES5实现迭代器的代码如下：
                 <h3 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h3><h4 id="ES5实现迭代器"><a href="#ES5实现迭代器" class="headerlink" title="ES5实现迭代器"></a>ES5实现迭代器</h4><p>迭代器是什么？遇到这种新的概念，莫慌张。</p>
 <p><strong>迭代器是一种特殊对象，每一个迭代器对象都有一个next()，该方法返回一个对象，包括value和done属性。</strong></p>
 <p><strong>ES5实现迭代器的代码如下：</strong></p>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实现一个返回迭代器对象的函数，注意该函数不是迭代器，返回结果才叫做迭代器。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createIterator</span>(<span class="params">items</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    next() &#123;</div><div class="line">      <span class="keyword">var</span> done = (i &gt;= items.length); <span class="comment">// 判断i是否小于遍历的对象长度。</span></div><div class="line">      <span class="keyword">var</span> value = !done ? items[i++] : <span class="literal">undefined</span>; <span class="comment">//如果done为false，设置value为当前遍历的值。</span></div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        done,</div><div class="line">        value</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> a = createIterator([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div><div class="line"></div><div class="line"><span class="comment">//该方法返回的最终是一个对象，包含value、done属性。</span></div><div class="line"><span class="built_in">console</span>.log(a.next()); <span class="comment">//&#123;value: 1, done: false&#125;</span></div><div class="line"><span class="built_in">console</span>.log(a.next()); <span class="comment">//&#123;value: 2, done: false&#125;</span></div><div class="line"><span class="built_in">console</span>.log(a.next()); <span class="comment">//&#123;value: 3, done: false&#125;</span></div><div class="line"><span class="built_in">console</span>.log(a.next()); <span class="comment">//&#123;value: undefined, done: true&#125;</span></div></pre></td></tr></table></figure>
 <h3 id="生成器（Generator）"><a href="#生成器（Generator）" class="headerlink" title="生成器（Generator）"></a>生成器（Generator）</h3><p><strong>生成器是函数：用来返回迭代器。</strong></p>
 <p>这个概念有2个关键点，一个是函数、一个是返回迭代器。这个函数不是上面ES5中创建迭代器的函数，而是ES6中特有的，一个带有*（星号）的函数，同时你也需要使用到yield。</p>

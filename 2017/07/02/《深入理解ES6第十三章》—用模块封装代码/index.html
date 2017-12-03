@@ -11,7 +11,7 @@
     <meta name="author" content="Wiestlee">
     
     <meta name="description" content="模块的定义模块是自动运行在严格模式下并且没有办法退出运行的JavaScript代码。
-模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。12345678910//数据模块const obj = &amp;#123;a: 1&amp;#125;//函数模块const sum = (a, b) =&amp;g">
+模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -210,6 +210,24 @@
     <div class="card">
         <div class="card-content">
             
+                <div class="gallery carousel carousel-slider">
+    
+      
+        <span class="carousel-item"><img class="carousel-image" src="http://upload-images.jianshu.io/upload_images/1504317-805392e6d4ad6f43.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></span>
+      
+    
+  <div class="control">
+    <div class="carousel-control prev">
+        <i class="fa fa-left"></i>
+
+    </div>
+    <div class="carousel-control next">
+        <i class="fa fa-right"></i>
+    </div>
+  </div>
+</div>
+
+            
 
             <div class="article-title">
                 
@@ -241,7 +259,9 @@
 
             <div class="entry indigo-link-context">
                 <h3 id="模块的定义"><a href="#模块的定义" class="headerlink" title="模块的定义"></a>模块的定义</h3><p>模块是自动运行在严格模式下并且没有办法退出运行的JavaScript代码。</p>
-<p>模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据模块</span></div><div class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment">//函数模块</span></div><div class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="comment">//类模块</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">My</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Components</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据模块</span></div><div class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment">//函数模块</span></div><div class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="comment">//类模块</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">My</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Components</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="模块的导出"><a href="#模块的导出" class="headerlink" title="模块的导出"></a>模块的导出</h3><p>给数据、函数、类添加一个export，就能导出模块。一个配置型的JavaScript文件中，你可能会封装多种函数，然后给每个函数加上一个export关键字，就能在其他文件访问到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据模块</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment">//函数模块</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="comment">//类模块</span></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">My</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Components</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="模块的引用"><a href="#模块的引用" class="headerlink" title="模块的引用"></a>模块的引用</h3><p>在另外的js文件中，我们可以引用上面定义的模块。使用import关键字，导入分2种情况，一种是导入指定的模块，另外一种是导入全部模块。</p>
 <p>1、导入指定的模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//导入obj数据，My类</span></div><div class="line"><span class="keyword">import</span> &#123;obj, My&#125; <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="built_in">console</span>.log(obj, My)</div></pre></td></tr></table></figure></p>

@@ -11,8 +11,7 @@
     <meta name="author" content="Wiestlee">
     
     <meta name="description" content="作为前端切图仔，越发觉得自己离不开函数了。
-说到JavaScript函数，脑子里都是匿名函数、普通函数、闭包函数、构造函数……然后还能说出一大堆函数的概念。如果你达到这个水平，那么函数对你来说没有难度，是一个前端老鸟了。
-当我闭上眼睛，不看键盘，手指在键盘上敲击出一个排序函数的时候，我在想，还是回顾">
+说到JavaScript函数，脑子里都是匿名函数、普通函数、闭包函数、构造函数……然后还能说出一大堆函数的概念。如果你达到这个水平，那么函数对你来说没有难度，是一个前端老鸟了。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -211,6 +210,24 @@
     <div class="card">
         <div class="card-content">
             
+                <div class="gallery carousel carousel-slider">
+    
+      
+        <span class="carousel-item"><img class="carousel-image" src="http://upload-images.jianshu.io/upload_images/1504317-805392e6d4ad6f43.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></span>
+      
+    
+  <div class="control">
+    <div class="carousel-control prev">
+        <i class="fa fa-left"></i>
+
+    </div>
+    <div class="carousel-control next">
+        <i class="fa fa-right"></i>
+    </div>
+  </div>
+</div>
+
+            
 
             <div class="article-title">
                 
@@ -243,6 +260,7 @@
             <div class="entry indigo-link-context">
                 <p>作为前端切图仔，越发觉得自己离不开函数了。</p>
 <p>说到JavaScript函数，脑子里都是匿名函数、普通函数、闭包函数、构造函数……然后还能说出一大堆函数的概念。如果你达到这个水平，那么函数对你来说没有难度，是一个前端老鸟了。</p>
+<a id="more"></a>
 <p>当我闭上眼睛，不看键盘，手指在键盘上敲击出一个排序函数的时候，我在想，还是回顾一下函数的基本知识才有意思。</p>
 <h3 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h3><p>在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num, callback</span>) </span>&#123;</div><div class="line">  num = num || <span class="number">6</span></div><div class="line">  callback = callback || <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'ES5: '</span>, data)&#125;</div><div class="line">  callback(num * num)</div><div class="line">&#125;</div><div class="line">a() <span class="comment">//ES5: 36，不传参输出默认值</span></div><div class="line"></div><div class="line"><span class="comment">//你还可以这样使用callback</span></div><div class="line">a(<span class="number">10</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(data * <span class="number">10</span>) <span class="comment">// 1000， 传参输出新数值</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>

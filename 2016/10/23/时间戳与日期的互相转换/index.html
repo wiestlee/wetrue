@@ -10,8 +10,7 @@
     <title>时间戳与日期的互相转换 | wiestlee&#39;s home</title>
     <meta name="author" content="Wiestlee">
     
-    <meta name="description" content="Date()参数的形式有7种
-new Date(“month dd,yyyy hh:mm:ss”);new Date(“month dd.yyy”);new Date(“yyyy/MM/dd”);new Date(“yyyy/MM/dd hh:mm:ss”);new Date(yyyy,mth,dd">
+    <meta name="description" content="Date()参数的形式有7种">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -240,7 +239,8 @@ new Date(“month dd,yyyy hh:mm:ss”);new Date(“month dd.yyy”);new Date(“
 
 
             <div class="entry indigo-link-context">
-                <h4 id="Date-参数的形式有7种"><a href="#Date-参数的形式有7种" class="headerlink" title="Date()参数的形式有7种"></a>Date()参数的形式有7种</h4><blockquote>
+                <h4 id="Date-参数的形式有7种"><a href="#Date-参数的形式有7种" class="headerlink" title="Date()参数的形式有7种"></a>Date()参数的形式有7种</h4><a id="more"></a>
+<blockquote>
 <p>new Date(“month dd,yyyy hh:mm:ss”);<br>new Date(“month dd.yyy”);<br>new Date(“yyyy/MM/dd”);<br>new Date(“yyyy/MM/dd hh:mm:ss”);<br>new Date(yyyy,mth,dd,hh,mm,ss);<br>new Date(yyyy,mth,dd);<br>new Date(ms);<br>比如：<br>new Date(“September 16,2016 14:15:05”);<br>new Date(“September 16,2016”);<br>new Date(“2016/09/16 14:15:05”);<br>new Date(“2016/09/16”);<br>new Date(2016,8,16,14.15,5); //月份从0~11<br>new Date(2016,8,16);<br>new Date(147400680)</p>
 </blockquote>
 <h4 id="将时间戳转换成日期格式"><a href="#将时间戳转换成日期格式" class="headerlink" title="将时间戳转换成日期格式"></a>将时间戳转换成日期格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var date = new Date(); //获取一个时间对象</div><div class="line">/**</div><div class="line">1.以下获取时间的方法</div><div class="line">*/</div><div class="line">date.getFullYear();</div><div class="line">date.getMonth(); //获取月份注意是从0开始的 记得加上1</div><div class="line">date.getDay();</div><div class="line">date.getTime();</div><div class="line">date.getHours();</div><div class="line">date.getMinutes();</div><div class="line">date.getSeconds();</div></pre></td></tr></table></figure>
