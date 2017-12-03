@@ -43,7 +43,7 @@
       <title><![CDATA[深入了解ES6第十二章-代理（Proxy）和反射（Reflection）API]]></title>
       <url>https://wiestlee.github.io/2017/07/01/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%8B%E2%80%94%E4%BB%A3%E7%90%86%EF%BC%88Proxy%EF%BC%89%E5%92%8C%E5%8F%8D%E5%B0%84%EF%BC%88Reflection%EF%BC%89API/</url>
       <content type="html"><![CDATA[<h3 id="反射-Reflect"><a href="#反射-Reflect" class="headerlink" title="反射 Reflect"></a>反射 Reflect</h3><p>当你见到一个新的API，不明白的时候，就在浏览器打印出来看看它的样子。</p>
-<p>![就像这样][<a href="https://sfault-image.b0.upaiyun.com/120/159/120159823-59818a46afeee_articlex" target="_blank" rel="external">https://sfault-image.b0.upaiyun.com/120/159/120159823-59818a46afeee_articlex</a>]</p>
+<p><img src="https://segmentfault.com/img/bVR5HF?w=1722&amp;h=560" alt="就像这样"></p>
 <h4 id="反射的概念"><a href="#反射的概念" class="headerlink" title="反射的概念"></a>反射的概念</h4><a id="more"></a>
 <p>Reflect 是一个内置的对象，它提供可拦截JavaScript操作的方法。方法与代理处理程序的方法相同。Reflect 不是一个函数对象，因此它是不可构造的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Reflect</span>() <span class="comment">//错误的写法</span></div></pre></td></tr></table></figure>
