@@ -1,0 +1,664 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>深入了解ES6第七章-Set集合与Map集合 | wiestlee&#39;s home</title>
+    <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="Map和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。
+SetSet是有序列表，含有相互独立的非重复值。创建Set既然我们现在不知道Set长什么样，有什么价值，那么何不创建一个Set集合看看呢？
+创建一个Set集合，你可以这样做：
+">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="深入了解ES6第七章-Set集合与Map集合"/>
+    <meta property="og:site_name" content="wiestlee&#39;s blog"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="wiestlee&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="light-blue">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">wiestlee&#39;s blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav light-blue" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://tvax4.sinaimg.cn/crop.0.0.996.996.180/a26415e9ly8fhlu7tr9ptj20ro0rojuk.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">Liweizhen</p>
+                        <p class="desc">Web前端&lt;/&gt;</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav light-blue" id="category-menu">
+    
+
+            
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper light-blue">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>深入了解ES6第七章-Set集合与Map集合</h1>
+    
+
+
+            </div>
+            <time class="indigo-link-context" datetime="2017-06-25T16:00:00.000Z"><a href="/2017/06/26/《深入理解ES6第七章》—Set集合与Map集合/">2017-06-26</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
+        
+    </div>
+
+
+            <div class="toc indigo-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Set"><span class="section table-of-contents-text">Set</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Set是有序列表，含有相互独立的非重复值。"><span class="section table-of-contents-text">Set是有序列表，含有相互独立的非重复值。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#创建Set"><span class="section table-of-contents-text">创建Set</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#迭代Set"><span class="section table-of-contents-text">迭代Set</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Set和Array的转换"><span class="section table-of-contents-text">Set和Array的转换</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Weak-Set集合"><span class="section table-of-contents-text">Weak Set集合</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Map"><span class="section table-of-contents-text">Map</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Map是存储许多键值对的有序列表，key和value支持所有数据类型。"><span class="section table-of-contents-text">Map是存储许多键值对的有序列表，key和value支持所有数据类型。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#创建Map"><span class="section table-of-contents-text">创建Map</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Weak-Map"><span class="section table-of-contents-text">Weak Map</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
+
+
+            <div class="entry indigo-link-context">
+                <p>Map和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。</p>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><h4 id="Set是有序列表，含有相互独立的非重复值。"><a href="#Set是有序列表，含有相互独立的非重复值。" class="headerlink" title="Set是有序列表，含有相互独立的非重复值。"></a>Set是有序列表，含有相互独立的非重复值。</h4><h4 id="创建Set"><a href="#创建Set" class="headerlink" title="创建Set"></a>创建Set</h4><p>既然我们现在不知道Set长什么样，有什么价值，那么何不创建一个Set集合看看呢？</p>
+<p><strong>创建一个Set集合，你可以这样做：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"><span class="built_in">console</span>.log(set);</div><div class="line"></div><div class="line"><span class="comment">//在浏览器控制台的输出结果</span></div><div class="line"><span class="built_in">Set</span>(<span class="number">0</span>) &#123;&#125;</div><div class="line">    size:(...)</div><div class="line">    __proto__:<span class="built_in">Set</span></div><div class="line">    [[Entries]]:<span class="built_in">Array</span>(<span class="number">0</span>)</div><div class="line">    length:<span class="number">0</span></div></pre></td></tr></table></figure>
+<p>看起来像个对象，那么现在我们在控制台打印一个对象，对比一下两者有什么不同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>()</div><div class="line"><span class="built_in">console</span>.log(obj)</div><div class="line"></div><div class="line"><span class="comment">//在控制台输出对象</span></div><div class="line"><span class="built_in">Object</span> &#123;&#125;</div><div class="line">    __proto__:</div></pre></td></tr></table></figure>
+<p>从输出结果看，Set和Object有明显的区别，反正他们就不是一个东西。</p>
+<p><strong>接着，我们看一下Set的原型有哪些：</strong></p>
+<p><img src="https://segmentfault.com/img/bVRqlN?w=858&amp;h=652" alt="clipboard.png"></p>
+<p>这里主要介绍几个基础原型的作用，想要了解全部请前往 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" rel="external">Set集合之家</a> 查看：</p>
+<p>Set.prototype.size<br>返回Set对象的值的个数。</p>
+<p>Set.prototype.add(value)<br>在Set对象尾部添加一个元素。返回该Set对象。</p>
+<p>Set.prototype.entries()<br>返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值的[value, value]数组。为了使这个方法和Map对象保持相似， 每个值的键和值相等。</p>
+<p>Set.prototype.forEach(callbackFn[, thisArg])<br>按照插入顺序，为Set对象中的每一个值调用一次callBackFn。如果提供了thisArg参数，回调中的this会是这个参数。</p>
+<p>Set.prototype.has(value)<br>返回一个布尔值，表示该值在Set中存在与否。</p>
+<p><strong>在例子中使用这几个方法测试一下：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line">set.add(<span class="string">'haha'</span>);</div><div class="line">set.add(<span class="built_in">Symbol</span>(<span class="string">'haha'</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(set.size); <span class="comment">//2</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(set); </div><div class="line"><span class="built_in">Set</span>(<span class="number">2</span>) &#123;<span class="string">"haha"</span>, <span class="built_in">Symbol</span>(haha)&#125;</div><div class="line">    size:(...)</div><div class="line">    __proto__:<span class="built_in">Set</span></div><div class="line">    [[Entries]]:<span class="built_in">Array</span>(<span class="number">2</span>)</div><div class="line">        <span class="number">0</span>:<span class="string">"haha"</span></div><div class="line">        <span class="number">1</span>:<span class="built_in">Symbol</span>(haha)</div><div class="line">    length:<span class="number">2</span></div><div class="line">    </div><div class="line"><span class="built_in">console</span>.log(set.has(<span class="string">'haha'</span>)) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>到这里，你会发现Set像数组，又像一个对象，但又不完全是。</p>
+<h4 id="迭代Set"><a href="#迭代Set" class="headerlink" title="迭代Set"></a>迭代Set</h4><p>Set既然提供了entries和forEach方法，那么他就是可迭代的。</p>
+<p>但如果你使用for in来迭代Set，你不能这样做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> sets) &#123;</div><div class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//不存在</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>for in迭代的是对象的key，而在Set中的元素没有key，<strong>使用for of来遍历</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> sets) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;</div><div class="line"><span class="comment">//"haha"</span></div><div class="line"><span class="comment">//Symbol(haha)</span></div><div class="line"></div><div class="line"><span class="comment">//如果你需要key，则使用下面这种方法</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> sets.entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value, key);</div><div class="line">&#125; </div><div class="line"><span class="comment">//"haha" "haha"</span></div><div class="line"><span class="comment">//Symbol(haha) Symbol(haha)</span></div></pre></td></tr></table></figure>
+<p><strong>forEach操作Set：</strong>Set本身没有key，而forEach方法中的key被设置成了元素本身。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sets.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(value, key);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//"haha" "haha"</span></div><div class="line"><span class="comment">//Symbol(haha) Symbol(haha)</span></div><div class="line"></div><div class="line">sets.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(value, key));</div><div class="line">&#125;); </div><div class="line"><span class="comment">//true true</span></div></pre></td></tr></table></figure>
+<h4 id="Set和Array的转换"><a href="#Set和Array的转换" class="headerlink" title="Set和Array的转换"></a>Set和Array的转换</h4><p>Set和数组太像了，Set集合的特点是没有key，没有下标，只有size和原型以及一个可迭代的不重复元素的类数组。既然这样，我们就可以把一个Set集合转换成数组，也可以把数组转换成Set。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数组转换成Set</span></div><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="string">'3'</span>, <span class="string">'3'</span>]</div><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</div><div class="line"><span class="built_in">console</span>.log(set) <span class="comment">// Set(3) &#123;1, 2, "3"&#125;</span></div><div class="line"></div><div class="line"><span class="comment">//Set转换成数组</span></div><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line">set.add(<span class="number">1</span>);</div><div class="line">set.add(<span class="string">'2'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(set)) <span class="comment">// (2) [1, "2"]</span></div></pre></td></tr></table></figure>
+<p>js面试中，经常会考的一道数组去重题目，就可以使用Set集合的不可重复性来处理。经测试只能去重下面3种类型的数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'haha'</span>, <span class="string">'haha'</span>, <span class="literal">null</span>, <span class="literal">null</span>]</div><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(set)) <span class="comment">// [1, 'haha', null]</span></div><div class="line"><span class="built_in">console</span>.log([...set]) <span class="comment">// [1, 'haha', null]</span></div></pre></td></tr></table></figure>
+<h3 id="Weak-Set集合"><a href="#Weak-Set集合" class="headerlink" title="Weak Set集合"></a>Weak Set集合</h3><p>Set集合本身是强引用，只要new Set()实例化的引用存在，就不释放内存，这样一刀切肯定不好啊，比如你定义了一个DOM元素的Set集合，然后在某个js中引用了该实例，但是当页面关闭或者跳转时，你希望该引用应立即释放内存，Set不听话，那好，你还可以使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakSet" target="_blank" rel="external">Weak Set</a></p>
+<p><strong>语法：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">WeakSet</span>([iterable]);</div></pre></td></tr></table></figure>
+<p><strong>和Set的区别：</strong></p>
+<p>1、<strong>WeakSet 对象中只能存放对象值</strong>, 不能存放原始值, 而 Set 对象都可以.</p>
+<p>2、WeakSet 对象中存储的对象值都是被弱引用的, 如果没有其他的变量或属性引用这个对象值, 则这个对象值会被当成垃圾回收掉. 正因为这样, <strong>WeakSet 对象是无法被枚举的</strong>, 没有办法拿到它包含的所有元素.</p>
+<p><strong>使用：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">WeakSet</span>();</div><div class="line"><span class="keyword">const</span> class_1 = &#123;&#125;, class_2 = &#123;&#125;;</div><div class="line">set.add(class_1);</div><div class="line">set.add(class_2);</div><div class="line"><span class="built_in">console</span>.log(set) <span class="comment">// WeakSet &#123;Object &#123;&#125;, Object &#123;&#125;&#125;</span></div><div class="line"><span class="built_in">console</span>.log(set.has(class_1)) <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(set.has(class_2)) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="Map是存储许多键值对的有序列表，key和value支持所有数据类型。"><a href="#Map是存储许多键值对的有序列表，key和value支持所有数据类型。" class="headerlink" title="Map是存储许多键值对的有序列表，key和value支持所有数据类型。"></a>Map是存储许多键值对的有序列表，key和value支持所有数据类型。</h4><h4 id="创建Map"><a href="#创建Map" class="headerlink" title="创建Map"></a>创建Map</h4><p>如果说Set像数组，那么Map更像对象。而对象中的key只支持字符串，Map更加强大，支持所有数据类型，不管是数字、字符串、Symbol等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一个空Map集合</span></div><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</div><div class="line"><span class="built_in">console</span>.log(map)</div></pre></td></tr></table></figure>
+<p><img src="https://segmentfault.com/img/bVRqxA?w=548&amp;h=188" alt="clipboard.png"></p>
+<p><strong>Map的所有原型方法：</strong><br><img src="https://segmentfault.com/img/bVRqxE?w=874&amp;h=654" alt="clipboard.png"></p>
+<p>对比Set集合的原型，<strong>Map集合的原型多了set()和get()方法</strong>，注意set()和Set集合不是一个东西。Map没有add，使用set()添加key，value，在Set集合中，使用add()添加value，没有key。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="string">'name'</span>, <span class="string">'haha'</span>);</div><div class="line">map.set(<span class="string">'id'</span>, <span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(map)</div><div class="line"><span class="comment">// 输出结果</span></div><div class="line"><span class="built_in">Map</span>(<span class="number">2</span>) &#123;<span class="string">"name"</span> =&gt; <span class="string">"haha"</span>, <span class="string">"id"</span> =&gt; <span class="number">10</span>&#125;</div><div class="line">    size:(...)</div><div class="line">    __proto__:<span class="built_in">Map</span></div><div class="line">    [[Entries]]:<span class="built_in">Array</span>(<span class="number">2</span>)</div><div class="line">        <span class="number">0</span>:&#123;<span class="string">"name"</span> =&gt; <span class="string">"haha"</span>&#125;</div><div class="line">        <span class="number">1</span>:&#123;<span class="string">"id"</span> =&gt; <span class="number">10</span>&#125;</div><div class="line">    length:<span class="number">2</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'id'</span>)) <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'name'</span>)) <span class="comment">// "haha"</span></div></pre></td></tr></table></figure>
+<p><strong>使用对象做key</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"><span class="keyword">const</span> key = &#123;&#125;;</div><div class="line">map.set(key, <span class="string">'谁知道这是个什么玩意'</span>);</div><div class="line"><span class="built_in">console</span>.log(map.get(key)) <span class="comment">// 谁知道这是个什么玩意</span></div></pre></td></tr></table></figure>
+<p><strong>Map同样可以使用forEach遍历key、value</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"><span class="keyword">const</span> key = &#123;&#125;;</div><div class="line">map.set(key, <span class="string">'这是个什么玩意'</span>);</div><div class="line">map.set(<span class="string">'name'</span>, <span class="string">'haha'</span>);</div><div class="line">map.set(<span class="string">'id'</span>, <span class="number">1</span>);</div><div class="line">map.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(key, value)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//Object &#123;&#125; "这是个什么玩意"</span></div><div class="line"><span class="comment">//"name" "haha"</span></div><div class="line"><span class="comment">//"id" 1</span></div></pre></td></tr></table></figure>
+<p>其他Map的使用方法可以前往 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="external">Map之家</a> 学习。</p>
+<h3 id="Weak-Map"><a href="#Weak-Map" class="headerlink" title="Weak Map"></a>Weak Map</h3><p>有强Map，就有弱鸡Map。</p>
+<p>和Set要解决的问题一样，希望不再引用Map的时候自动触发垃圾回收机制。那么，你就需要Weak Map。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</div><div class="line"><span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">'.header'</span>);</div><div class="line">map.set(key, <span class="string">'这是个什么玩意'</span>);</div><div class="line"></div><div class="line">map.get(key) <span class="comment">// "这是个什么玩意"</span></div><div class="line"></div><div class="line"><span class="comment">//移除该元素</span></div><div class="line">key.parentNode.removeChild(key);</div><div class="line">key = <span class="literal">null</span>;</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Set集合可以用来过滤数组中重复的元素，只能通过has方法检测指定的值是否存在，或者是通过forEach处理每个值。</p>
+<p>Weak Set集合存放对象的弱引用，当该对象的其他强引用被清除时，集合中的弱引用也会自动被垃圾回收机制回收，追踪成组的对象是该集合最好的使用方式。</p>
+<p>Map集合通过set()添加键值对，通过get()获取键值，各种方法的使用查看文章教程，你可以把它看成是比Object更加强大的对象。</p>
+<p>Weak Map集合只支持对象类型的key，所有key都是弱引用，当该对象的其他强引用被清除时，集合中的弱引用也会自动被垃圾回收机制回收，为那些实际使用与生命周期管理分离的对象添加额外信息是非常适合的使用方式。</p>
+<p>记得刚开始学习JavaScript的时候，不知道各种数据类型有什么用，如果你现在刚学习Map和Set也是这种不知道能用来干什么的想法，那么，恭喜，他们已经开始走入你的编程生涯，慢慢的你就会熟悉他们。</p>
+
+                
+<p class="indigo-link-context">
+    <a href="/2017/06/27/《深入理解ES6第八章》—迭代器（Iterator）和生成器（Generator）/" rel="next" title="深入了解ES6第八章-迭代器和生成器">
+    上一篇：深入了解ES6第八章-迭代器和生成器
+  </a>
+</p>
+
+
+
+<p class="indigo-link-context">
+    <a href="/2017/06/25/了解nodejs/" rel="next" title="了解Node.js">
+    下一篇：了解Node.js
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/06/26/《深入理解ES6第七章》—Set集合与Map集合/" data-title="深入了解ES6第七章-Set集合与Map集合" data-url="https://wiestlee.github.io/2017/06/26/《深入理解ES6第七章》—Set集合与Map集合/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'wiestlee'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink lighten-2">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect purple" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse cyan lighten-1"  data-activates="main-menu" title="floatmenu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer light-blue darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/2724468201/profile?is_search=0&amp;is_all=1" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/wiestlee/wiestlee.github.io" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="https://wiestlee.github.io/" target="_blank">wiestlee</a>
+                
+                    <a class="social-link" href="https://github.com/wiestlee" target="_blank">Github地址（测试友情链接）</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright indigo-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('indigo lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink lighten-2"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword indigo lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>

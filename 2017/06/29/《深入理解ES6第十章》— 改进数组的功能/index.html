@@ -7,13 +7,18 @@
 
     
 
-    <title>第 2 页 | wiestlee&#39;s home</title>
+    <title>深入了解ES6第十章-改进数组的功能 | wiestlee&#39;s home</title>
     <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="ES5提供的数组已经很强大，但是ES6中继续改进了一些，主要是增加了新的数组方法，所以这章的知识非常少。
+创建数组ES5中创建数组的方式：数组字面量、new一个数组。
+12const arr1 = [] //数组字面量const arr2 = new Array() //new构建
+ES6创建数组：">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="深入了解ES6第十章-改进数组的功能"/>
     <meta property="og:site_name" content="wiestlee&#39;s blog"/>
 
     
@@ -190,61 +195,38 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper light-blue">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
-<div class="slider">
-    <ul class="slides">
-    
-       <li>
-           <a href="http://wiestlee.github.io">
-               <img class="slider-image" src="https://blogs.treasurers.org/wp-content/uploads/2016/04/Blog-banner-louise-April-2016.jpg">
-               <div class="caption left-align">
-                 <h4>你好，世界!</h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="http://wiestlee.github.io">
-               <img class="slider-image" src="http://www.aestheticsofessex.co.uk/wp-content/uploads/2016/05/blog-banner-2.jpg">
-               <div class="caption left-align">
-                 <h4></h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="https://wiestlee.github.io/yanxuan/">
-               <img class="slider-image" src="http://i1.hdslb.com/bfs/archive/bb4ae159358e5d2dba900393fc4f8bb6e72c1bab.jpg">
-               <div class="caption right-align">
-                 <h4></h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-   </ul>
- </div>
+        
+    </div>
+</nav>
 
-
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
+<article>
     <div class="card">
         <div class="card-content">
+            
+
             <div class="article-title">
                 
     
-        <h1 class="blue-link-context"><a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">深入了解ES6第四章-拓展对象的功能性</a></h1>
+        <h1>深入了解ES6第十章-改进数组的功能</h1>
     
 
 
             </div>
+            <time class="indigo-link-context" datetime="2017-06-28T16:00:00.000Z"><a href="/2017/06/29/《深入理解ES6第十章》— 改进数组的功能/">2017-06-29</a></time>
 
-            <time class="indigo-link-context" datetime="2017-06-22T16:00:00.000Z"><a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">2017-06-23</a></time>
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -254,392 +236,98 @@
     </div>
 
 
+            <div class="toc indigo-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#创建数组"><span class="section table-of-contents-text">创建数组</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Array-of"><span class="section table-of-contents-text">Array.of()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Array-from"><span class="section table-of-contents-text">Array.from()</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#给数组添加新方法"><span class="section table-of-contents-text">给数组添加新方法</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#其他新增方法"><span class="section table-of-contents-text">其他新增方法</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
 
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
 
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
+            <div class="entry indigo-link-context">
+                <p>ES5提供的数组已经很强大，但是ES6中继续改进了一些，主要是增加了新的数组方法，所以这章的知识非常少。</p>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p><strong>ES5中创建数组的方式：数组字面量、new一个数组。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr1 = [] <span class="comment">//数组字面量</span></div><div class="line"><span class="keyword">const</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>() <span class="comment">//new构建</span></div></pre></td></tr></table></figure>
+<p><strong>ES6创建数组：Array.of()、Array.from()</strong></p>
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h4><p>ES5中new一个人数组的时候，会存在一个令人困惑的情况。当new一个数字的时候，生成的是一个长度为该数字的数组，当new一个字符串的时候，生成的是该字符串为元素的数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">2</span>)</div><div class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"2"</span>)</div><div class="line"><span class="built_in">console</span>.log(a, b) <span class="comment">//[undefined, undefined] ["2"]</span></div></pre></td></tr></table></figure>
+<p>这样一来，导致new Array的行为是不可预测的，Array.of()出现为的就是解决这个情况。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> c = <span class="built_in">Array</span>.of(<span class="number">2</span>)</div><div class="line"><span class="keyword">const</span> d = <span class="built_in">Array</span>.of(<span class="string">"2"</span>)</div><div class="line"><span class="built_in">console</span>.log(c, d) <span class="comment">// [2] ["2"]</span></div></pre></td></tr></table></figure>
+<p>使用Array.of()创建的数组传入的参数都是作为数组的元素，而不在是数组长度，这样就避免了使用上的歧义。</p>
+<h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h4><p>如果说Array.of()是创建一个新数组，而<strong>Array.from()是将类数组转换成数组</strong>。</p>
+<p>下面的例子讲的是将arguments转换成数组。arguments是类数组对象，他表示的是当前函数的所有参数，如果函数没有参数，那么arguments就为空。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>)</div><div class="line">  <span class="built_in">console</span>.log(arr)</div><div class="line">&#125;</div><div class="line">test(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">//[1, 2]</span></div></pre></td></tr></table></figure>
+<p><strong>映射转换：</strong>Array.from(arg1, arg2)，我们可以给该方法提供2个参数，第二个参数作为第一个参数的转换。看个简单例子你就懂了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>, value =&gt; value + <span class="number">2</span>)</div><div class="line">  <span class="built_in">console</span>.log(arr)</div><div class="line">&#125;</div><div class="line">test(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">//[3, 4]</span></div></pre></td></tr></table></figure>
+<p>Array.from还可以设置第三个参数，指定this。</p>
+<p><strong>Array.from()转换可迭代对象：</strong>这个用法只需要一个例子，数组去重。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(...arguments))</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> s = test([<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>])</div><div class="line"><span class="built_in">console</span>.log(s) <span class="comment">// [1,"2",3]</span></div></pre></td></tr></table></figure>
+<h3 id="给数组添加新方法"><a href="#给数组添加新方法" class="headerlink" title="给数组添加新方法"></a>给数组添加新方法</h3><p><strong>ES6给数组添加了几个新方法：find()、findIndex()、fill()、copyWithin()。</strong></p>
+<p>1、find()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它，并且终止搜索。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>2、findIndex()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它的下标，终止搜索。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.findIndex(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<p>3、fill()：用新元素替换掉数组内的元素，可以指定替换下标范围。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.fill(value, start, end)</div></pre></td></tr></table></figure>
+<p>测试一下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.fill(<span class="number">4</span>)) <span class="comment">// [4, 4, 4] 不指定开始和结束，全部替换</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="built_in">console</span>.log(arr1.fill(<span class="number">4</span>, <span class="number">1</span>)) <span class="comment">// [1, 4, 4] 指定开始位置，从开始位置全部替换</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="built_in">console</span>.log(arr2.fill(<span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>)) <span class="comment">// [4, 4, 3] 指定开始和结束位置，替换当前范围的元素</span></div></pre></td></tr></table></figure>
+<p>4、copyWithin()：选择数组的某个下标，从该位置开始复制数组元素，默认从0开始复制。也可以指定要复制的元素范围。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.copyWithin(target, start, end)</div></pre></td></tr></table></figure>
+<p>测试一下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">3</span>)) <span class="comment">// [1,2,3,1,2] 从下标为3的元素开始，复制数组，所以4, 5被替换成1, 2</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="built_in">console</span>.log(arr1.copyWithin(<span class="number">3</span>, <span class="number">1</span>)) <span class="comment">// [1,2,3,2,3] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，所以4, 5被替换成2, 3</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="built_in">console</span>.log(arr2.copyWithin(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// [1,2,3,2,5] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，结束位置为2，所以4被替换成2</span></div></pre></td></tr></table></figure></p>
+<h4 id="其他新增方法"><a href="#其他新增方法" class="headerlink" title="其他新增方法"></a>其他新增方法</h4><p>其他还有定型数组、数组缓冲区的概念，你可以详细查看书上教程。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>掌握新的创建数组的方式，以及数组新增的几个方法，就够你使用了。定型数组和数组缓冲区一般人可以不用了解的太详细。</p>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
                 
-    
-        <h1 class="blue-link-context"><a href="/2017/06/22/《深入理解ES6第三章》—函数/">深入了解ES6第三章-函数</a></h1>
-    
+<p class="indigo-link-context">
+    <a href="/2017/06/30/《深入理解ES6第十一章》— Promise与异步编程/" rel="next" title="深入了解ES6第十一章-Promise与异步编程">
+    上一篇：深入了解ES6第十一章-Promise与异步编程
+  </a>
+</p>
+
+
+
+<p class="indigo-link-context">
+    <a href="/2017/06/28/《深入理解ES6第九章》— JavaScript中的类class/" rel="next" title="深入了解ES6第九章-Javascript中的类class">
+    下一篇：深入了解ES6第九章-Javascript中的类class
+  </a>
+</p>
 
 
             </div>
-
-            <time class="indigo-link-context" datetime="2017-06-21T16:00:00.000Z"><a href="/2017/06/22/《深入理解ES6第三章》—函数/">2017-06-22</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
+			
         </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/22/《深入理解ES6第三章》—函数/">阅读全文</a>
-        </div>
-        
     </div>
 </article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">深入了解ES6第二章-字符串与正则表达式</a></h1>
-    
 
 
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/06/29/《深入理解ES6第十章》— 改进数组的功能/" data-title="深入了解ES6第十章-改进数组的功能" data-url="https://wiestlee.github.io/2017/06/29/《深入理解ES6第十章》— 改进数组的功能/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'wiestlee'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
             </div>
-
-            <time class="indigo-link-context" datetime="2017-06-20T16:00:00.000Z"><a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">2017-06-21</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
         </div>
+    </section>
 
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">深入了解ES6第一章-块级作用域</a></h1>
-    
 
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-06-19T16:00:00.000Z"><a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">2017-06-20</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/25/flux架构学习/">React-native flux（alt）架构学习</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-24T16:00:00.000Z"><a href="/2017/03/25/flux架构学习/">2017-03-25</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/React/" class="chip pink lighten-2">React</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/25/flux架构学习/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/20/初识vue/">初识Vue-简介</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-19T16:00:00.000Z"><a href="/2017/03/20/初识vue/">2017-03-20</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/Vue/" class="chip pink lighten-2">Vue</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/20/初识vue/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/18/tags-  [JavaScript]-3/">HTML全局属性</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/tags-  [JavaScript]-3/">2017-03-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-2">JavaScript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/18/tags-  [JavaScript]-3/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/18/HTML5前端性能优化页面预加载/">HTML5前端性能优化-页面预加载</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/HTML5前端性能优化页面预加载/">2017-03-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/HTML/" class="chip pink lighten-2">HTML</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/18/HTML5前端性能优化页面预加载/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/16/3/">JS数组哪些事</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/3/">2017-03-16</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/16/3/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/16/实现对象的深度克隆/">实现对象的深度clone</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/实现对象的深度克隆/">2017-03-16</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-2">JavaScript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/16/实现对象的深度克隆/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-
-    <ul class="pagination center-align">
-    <li class="">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="waves-effect"><a href="/">1</a></li>
-    
-        <li class="active blue"><a href="/page/2">2</a></li>
-    
-        <li class="waves-effect"><a href="/page/3">3</a></li>
-    
-    
-    <li class="">
-        <a href="/page/3/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
 
 </div>
 

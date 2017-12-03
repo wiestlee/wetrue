@@ -7,13 +7,16 @@
 
     
 
-    <title>第 2 页 | wiestlee&#39;s home</title>
+    <title>深入了解ES6第十三章-用模块封装代码 | wiestlee&#39;s home</title>
     <meta name="author" content="Wiestlee">
+    
+    <meta name="description" content="模块的定义模块是自动运行在严格模式下并且没有办法退出运行的JavaScript代码。
+模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。12345678910//数据模块const obj = &amp;#123;a: 1&amp;#125;//函数模块const sum = (a, b) =&amp;g">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="深入了解ES6第十三章-用模块封装代码"/>
     <meta property="og:site_name" content="wiestlee&#39;s blog"/>
 
     
@@ -190,61 +193,38 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper light-blue">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
-<div class="slider">
-    <ul class="slides">
-    
-       <li>
-           <a href="http://wiestlee.github.io">
-               <img class="slider-image" src="https://blogs.treasurers.org/wp-content/uploads/2016/04/Blog-banner-louise-April-2016.jpg">
-               <div class="caption left-align">
-                 <h4>你好，世界!</h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="http://wiestlee.github.io">
-               <img class="slider-image" src="http://www.aestheticsofessex.co.uk/wp-content/uploads/2016/05/blog-banner-2.jpg">
-               <div class="caption left-align">
-                 <h4></h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="https://wiestlee.github.io/yanxuan/">
-               <img class="slider-image" src="http://i1.hdslb.com/bfs/archive/bb4ae159358e5d2dba900393fc4f8bb6e72c1bab.jpg">
-               <div class="caption right-align">
-                 <h4></h4>
-                 <h5 class="light grey-text text-lighten-3"></h5>
-               </div>
-           </a>
-       </li>
-    
-   </ul>
- </div>
+        
+    </div>
+</nav>
 
-
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
+<article>
     <div class="card">
         <div class="card-content">
+            
+
             <div class="article-title">
                 
     
-        <h1 class="blue-link-context"><a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">深入了解ES6第四章-拓展对象的功能性</a></h1>
+        <h1>深入了解ES6第十三章-用模块封装代码</h1>
     
 
 
             </div>
+            <time class="indigo-link-context" datetime="2017-07-01T16:00:00.000Z"><a href="/2017/07/02/《深入理解ES6第十三章》—用模块封装代码/">2017-07-02</a></time>
 
-            <time class="indigo-link-context" datetime="2017-06-22T16:00:00.000Z"><a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">2017-06-23</a></time>
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -254,392 +234,81 @@
     </div>
 
 
+            <div class="toc indigo-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#模块的定义"><span class="section table-of-contents-text">模块的定义</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#模块的导出"><span class="section table-of-contents-text">模块的导出</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#模块的引用"><span class="section table-of-contents-text">模块的引用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#默认模块的使用"><span class="section table-of-contents-text">默认模块的使用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#模块的使用限制"><span class="section table-of-contents-text">模块的使用限制</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#修改模块导入和导出名"><span class="section table-of-contents-text">修改模块导入和导出名</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#无绑定导入"><span class="section table-of-contents-text">无绑定导入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#浏览器加载模块"><span class="section table-of-contents-text">浏览器加载模块</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
 
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
 
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/23/《深入理解ES6第四章》—扩展对象的功能性/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
+            <div class="entry indigo-link-context">
+                <h3 id="模块的定义"><a href="#模块的定义" class="headerlink" title="模块的定义"></a>模块的定义</h3><p>模块是自动运行在严格模式下并且没有办法退出运行的JavaScript代码。</p>
+<p>模块可以是函数、数据、类，需要指定导出的模块名，才能被其他模块访问。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据模块</span></div><div class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment">//函数模块</span></div><div class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="comment">//类模块</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">My</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Components</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="模块的导出"><a href="#模块的导出" class="headerlink" title="模块的导出"></a>模块的导出</h3><p>给数据、函数、类添加一个export，就能导出模块。一个配置型的JavaScript文件中，你可能会封装多种函数，然后给每个函数加上一个export关键字，就能在其他文件访问到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据模块</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment">//函数模块</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="comment">//类模块</span></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">My</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Components</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="模块的引用"><a href="#模块的引用" class="headerlink" title="模块的引用"></a>模块的引用</h3><p>在另外的js文件中，我们可以引用上面定义的模块。使用import关键字，导入分2种情况，一种是导入指定的模块，另外一种是导入全部模块。</p>
+<p>1、导入指定的模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//导入obj数据，My类</span></div><div class="line"><span class="keyword">import</span> &#123;obj, My&#125; <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="built_in">console</span>.log(obj, My)</div></pre></td></tr></table></figure></p>
+<p>2、导入全部模块<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//导入全部模块</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> all <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="built_in">console</span>.log(all.obj, all.sun(<span class="number">1</span>, <span class="number">2</span>), all.My)</div></pre></td></tr></table></figure></p>
+<h3 id="默认模块的使用"><a href="#默认模块的使用" class="headerlink" title="默认模块的使用"></a>默认模块的使用</h3><p>如果给我们的模块加上default关键字，那么该js文件默认只导出该模块，你还需要把大括号去掉。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//默认模块的定义</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> sum</div><div class="line"></div><div class="line"><span class="comment">//导入默认模块</span></div><div class="line"><span class="keyword">import</span> sum <span class="keyword">from</span> <span class="string">'./xx.js'</span></div></pre></td></tr></table></figure></p>
+<h3 id="模块的使用限制"><a href="#模块的使用限制" class="headerlink" title="模块的使用限制"></a>模块的使用限制</h3><p>不能在语句和函数之内使用export关键字，只能在模块顶部使用，作为react和vue开发者的你，这个限制你应该很熟悉了。</p>
+<p><strong>在react中，模块顶部导入其他模块。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> react <span class="keyword">from</span> <span class="string">'react'</span></div></pre></td></tr></table></figure></p>
+<p><strong>在vue中，模块顶部导入其他模块。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">import</span> sum <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="修改模块导入和导出名"><a href="#修改模块导入和导出名" class="headerlink" title="修改模块导入和导出名"></a>修改模块导入和导出名</h3><p>有2种修改方式，一种是模块导出时修改，一种是导入模块时修改。</p>
+<p>1、导出时修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123;sum <span class="keyword">as</span> add&#125;</div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line">add(<span class="number">1</span>, <span class="number">2</span>)</div></pre></td></tr></table></figure></p>
+<p>2、导入时修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> sum</div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; sum <span class="keyword">as</span> add &#125; <span class="keyword">from</span> <span class="string">'./xx.js'</span></div><div class="line">add(<span class="number">1</span>, <span class="number">2</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="无绑定导入"><a href="#无绑定导入" class="headerlink" title="无绑定导入"></a>无绑定导入</h3><p>当你的模块没有可导出模块，全都是定义的全局变量的时候，你可以使用无绑定导入。</p>
+<p>模块：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span></div><div class="line"><span class="keyword">const</span> PI = <span class="number">3.1314</span></div></pre></td></tr></table></figure></p>
+<p>无绑定导入：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'./xx.js'</span></div><div class="line"><span class="built_in">console</span>.log(a, PI)</div></pre></td></tr></table></figure></p>
+<h3 id="浏览器加载模块"><a href="#浏览器加载模块" class="headerlink" title="浏览器加载模块"></a>浏览器加载模块</h3><p>有用过webpack打包js模块的同学可能有经验，使用webpack打包了多个js文件，然后放到HTML使用script加载时，如果加载顺序不对，就会出现找不到模块的错误。</p>
+<p>这是因为模块之间是有依赖关系的，就像你使用jQuery的时候，必须先加载jQuery的代码，才能使用jQuery提供的方法。</p>
+<p><strong>加载模块的方法，总是先加载模块1，再加载模块2，因为module类型默认使用defer属性。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"module"</span> src=<span class="string">"module1.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script type=<span class="string">"module"</span> src=<span class="string">"module2.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>模块还有很多有意思的特性，对react和vue开发有一定经验的人对这些基本知识应该了如指掌，新手不了解也不用太心急，写几个module.js做一下尝试。如果浏览器报错，不能识别export模块，你可能需要先加载babel的js插件来编译它。</p>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
                 
-    
-        <h1 class="blue-link-context"><a href="/2017/06/22/《深入理解ES6第三章》—函数/">深入了解ES6第三章-函数</a></h1>
-    
+
+
+<p class="indigo-link-context">
+    <a href="/2017/07/01/《深入理解ES6第十二章》—代理（Proxy）和反射（Reflection）API/" rel="next" title="深入了解ES6第十二章-代理（Proxy）和反射（Reflection）API">
+    下一篇：深入了解ES6第十二章-代理（Proxy）和反射（Reflection）API
+  </a>
+</p>
 
 
             </div>
-
-            <time class="indigo-link-context" datetime="2017-06-21T16:00:00.000Z"><a href="/2017/06/22/《深入理解ES6第三章》—函数/">2017-06-22</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
+			
         </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/22/《深入理解ES6第三章》—函数/">阅读全文</a>
-        </div>
-        
     </div>
 </article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">深入了解ES6第二章-字符串与正则表达式</a></h1>
-    
 
 
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/07/02/《深入理解ES6第十三章》—用模块封装代码/" data-title="深入了解ES6第十三章-用模块封装代码" data-url="https://wiestlee.github.io/2017/07/02/《深入理解ES6第十三章》—用模块封装代码/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'wiestlee'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
             </div>
-
-            <time class="indigo-link-context" datetime="2017-06-20T16:00:00.000Z"><a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">2017-06-21</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
         </div>
+    </section>
 
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/21/《深入理解ES6第二章》—字符串和正则表达式/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">深入了解ES6第一章-块级作用域</a></h1>
-    
 
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-06-19T16:00:00.000Z"><a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">2017-06-20</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/06/20/《深入理解ES6第一章》—块级作用域绑定/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/25/flux架构学习/">React-native flux（alt）架构学习</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-24T16:00:00.000Z"><a href="/2017/03/25/flux架构学习/">2017-03-25</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/React/" class="chip pink lighten-2">React</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/25/flux架构学习/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/20/初识vue/">初识Vue-简介</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-19T16:00:00.000Z"><a href="/2017/03/20/初识vue/">2017-03-20</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/Vue/" class="chip pink lighten-2">Vue</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/20/初识vue/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/18/tags-  [JavaScript]-3/">HTML全局属性</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/tags-  [JavaScript]-3/">2017-03-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-2">JavaScript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/18/tags-  [JavaScript]-3/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/18/HTML5前端性能优化页面预加载/">HTML5前端性能优化-页面预加载</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-17T16:00:00.000Z"><a href="/2017/03/18/HTML5前端性能优化页面预加载/">2017-03-18</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/HTML/" class="chip pink lighten-2">HTML</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/18/HTML5前端性能优化页面预加载/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/16/3/">JS数组哪些事</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/3/">2017-03-16</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/javascript/" class="chip pink lighten-2">javascript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/16/3/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="blue-link-context"><a href="/2017/03/16/实现对象的深度克隆/">实现对象的深度clone</a></h1>
-    
-
-
-            </div>
-
-            <time class="indigo-link-context" datetime="2017-03-15T16:00:00.000Z"><a href="/2017/03/16/实现对象的深度克隆/">2017-03-16</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/JavaScript/" class="chip pink lighten-2">JavaScript</a>
-        
-    </div>
-
-
-
-            
-                <div class="entry indigo-link-context">
-                    
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action indigo-link-context">
-            <a href="/2017/03/16/实现对象的深度克隆/">阅读全文</a>
-        </div>
-        
-    </div>
-</article>
-
-    
-
-    <ul class="pagination center-align">
-    <li class="">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="waves-effect"><a href="/">1</a></li>
-    
-        <li class="active blue"><a href="/page/2">2</a></li>
-    
-        <li class="waves-effect"><a href="/page/3">3</a></li>
-    
-    
-    <li class="">
-        <a href="/page/3/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
 
 </div>
 

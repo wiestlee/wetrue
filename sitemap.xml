@@ -2,9 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wiestlee.github.io/2017/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6/</loc>
+    <loc>https://wiestlee.github.io/2017/07/02/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%E3%80%8B%E2%80%94%E7%94%A8%E6%A8%A1%E5%9D%97%E5%B0%81%E8%A3%85%E4%BB%A3%E7%A0%81/</loc>
     
-    <lastmod>2017-11-19T02:43:06.613Z</lastmod>
+    <lastmod>2017-12-03T04:34:15.144Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/07/01/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%E3%80%8B%E2%80%94%E4%BB%A3%E7%90%86%EF%BC%88Proxy%EF%BC%89%E5%92%8C%E5%8F%8D%E5%B0%84%EF%BC%88Reflection%EF%BC%89API/</loc>
+    
+    <lastmod>2017-12-03T04:34:02.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/30/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%E3%80%8B%E2%80%94%20Promise%E4%B8%8E%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
+    
+    <lastmod>2017-12-03T04:33:52.475Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/29/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%8D%81%E7%AB%A0%E3%80%8B%E2%80%94%20%E6%94%B9%E8%BF%9B%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%9F%E8%83%BD/</loc>
+    
+    <lastmod>2017-12-03T04:33:34.859Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/28/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%B9%9D%E7%AB%A0%E3%80%8B%E2%80%94%20JavaScript%E4%B8%AD%E7%9A%84%E7%B1%BBclass/</loc>
+    
+    <lastmod>2017-12-03T04:33:26.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/27/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%85%AB%E7%AB%A0%E3%80%8B%E2%80%94%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterator%EF%BC%89%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88Generator%EF%BC%89/</loc>
+    
+    <lastmod>2017-12-03T04:33:21.021Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/26/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%B8%83%E7%AB%A0%E3%80%8B%E2%80%94Set%E9%9B%86%E5%90%88%E4%B8%8EMap%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2017-12-03T04:33:04.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/25/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%85%AD%E7%AB%A0%E3%80%8B%E2%80%94Symbol%E5%92%8CSymbol%E5%B1%9E%E6%80%A7/</loc>
+    
+    <lastmod>2017-12-03T04:32:56.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/24/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%BA%94%E7%AB%A0%E3%80%8B%E2%80%94%E8%A7%A3%E6%9E%84%EF%BC%9A%E4%BD%BF%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%9B%B4%E4%BE%BF%E6%8D%B7/</loc>
+    
+    <lastmod>2017-12-03T04:32:46.602Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/23/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E5%9B%9B%E7%AB%A0%E3%80%8B%E2%80%94%E6%89%A9%E5%B1%95%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%9F%E8%83%BD%E6%80%A7/</loc>
+    
+    <lastmod>2017-12-03T04:32:41.282Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/22/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%8B%E2%80%94%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2017-12-03T04:32:34.043Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/21/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E3%80%8B%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    
+    <lastmod>2017-12-03T04:26:51.165Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wiestlee.github.io/2017/06/20/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%8B%E2%80%94%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A/</loc>
+    
+    <lastmod>2017-12-03T04:22:11.133Z</lastmod>
     
   </url>
   
